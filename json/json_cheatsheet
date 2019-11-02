@@ -1,0 +1,5 @@
+save json as a file
+# with open('json_example.json', 'wb') as file:
+#     jsn = json.dumps(json_data, sort_keys=True, ensure_ascii=False,
+#                      indent=4, separators=(',', ': ')).encode('utf-8')
+#     file.write(jsn)

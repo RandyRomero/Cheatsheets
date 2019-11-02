@@ -1,0 +1,14 @@
+Show all keys:
+KEYS '*'
+
+Show the list of all set members:
+smembers 'your_set_name'
+
+Get keys of a specific hash:
+HKEYS you_hash_name
+
+Get keys and values of a specific hash:
+HGETALL your_hash_name
+
+Del a key in a hash:
+HDEL your_hash_name your_key_name

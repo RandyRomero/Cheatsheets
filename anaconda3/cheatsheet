@@ -1,0 +1,4 @@
+how to activate conda virtual environment
+source ~/anaconda3/bin/activate
+
+

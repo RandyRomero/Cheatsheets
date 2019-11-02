@@ -1,0 +1,42 @@
+print several specific columns:
+df[['column_name', 'some_other_column_name"]]
+
+
+print entire dataframe:
+print(dt.to_string())
+
+remove values if there is missing cells in specific columns:
+data = data.dropna(axis=0, subset=['Дата рождения застрахованного (или возраст)', 'Идентификатор застрахованного'])
+
+count unique values:
+df['sex'].value_counts()
+male      577
+female    314
+Name: sex, dtype: int64
+
+count unique values in column:
+print(data['ИД услуги'].nunique())
+
+return cell value by cell value in another column in the same row:
+config.loc[config['col_rename'] == 'SERVICE_AMOUNT', 'col_name'].values[0]
+
+Count total NaN at each column in DataFrame:
+print(df.isnull().sum())
+
+Name       1
+Age        3
+City       3
+Country    2
+
+drop rows where value in a specific column is empty
+df = df[pd.notnull(df['name of column'])]
+
+# find null values in a specific column
+print(pd.isnull(data['AGE']).to_numpy().nonzero()[0])
+
+# fill null values with default value in a specific column
+data['AGE'] = data['AGE'].fillna(20)
+
+# rename columns
+data = data.rename(columns={"SERVICE_NAME": "SERVICE_NAME_ENG", "some_other_name": "some_other_rename")
+

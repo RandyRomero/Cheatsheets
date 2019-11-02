@@ -1,0 +1,11 @@
+**unrar .rar archive with password:
+sudo apt-get install unrar
+unrar x filename.rar
+You will be asked for the password, so type it in and press enter.
+
+**copy files from / to server:
+scp -r robot@172.20.140.200:~/fraud_detection/recommendations/production/output/rgs3_results.xlsx 801_02-05.2019_output.xls
+
+scp apply_rules.py robot@172.20.140.200:~/fraud_detection/recommendations/production/apply_rules.py
+
+

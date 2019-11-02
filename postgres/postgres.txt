@@ -1,0 +1,38 @@
+open postgres command line from docker:
+docker exec -it name_of_your_container psql -U postgres
+
+Create a database:
+CREATE DATABASE database_name;
+
+Create a user with encrypted password:
+CREATE USER user_name with ENCRYPTED PASSWORD 'your_password_here';
+
+grant privileges for user:
+GRANT ALL PRIVILEGES ON DATABASE your_database_name TO your_user_name;
+
+show databases:
+\l
+
+choose a database:
+\c your_database_name
+
+show tables:
+\dt
+
+describe table:
+\d+ your_table_name
+
+insert a row into a table:
+INSERT INTO ms_users(login, password) VALUES ('some_login', 'some_password');
+
+alter column type:
+ALTER TABLE ms_tasks ALTER COLUMN client_id TYPE integer USING client_id::integer;
+
+drop database your_database_name;
+drop database:
+
+show last N rows
+select * from sample order by request_date desc limit 20;
+
+
+

@@ -1,0 +1,13 @@
+How to delete several rows by value of the attribute:
+
+session.query(Task).filter(Task.task_status == 'attached files saved').delete(synchronize_session='fetch')
+        session.commit()
+
+How to delete all rows:
+session.query(Task).delete(synchronize_session='fetch')
+session.commit()
+
+How to select all rows in a table:
+result = session.query(Task).all()
+for row in result:
+    print(row.task_id, row.email_address, row.task_status)
