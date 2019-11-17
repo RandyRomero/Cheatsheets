@@ -39,10 +39,20 @@ def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     print(only_na)
 
 
+def get_number_of_unique_values(df: pd.DataFrame) -> None:
+    print(df['name'].nunique())
+
+
+def print_all_column_names(df: pd.DataFrame) -> None:
+    print(list(df))
+
+
 def main():
     df = pd.read_excel('smartphones.xlsx')
     # print_specific_columns(df)
-    drop_rows_with_nan_values(df)
+    # drop_rows_with_nan_values(df)
+    get_number_of_unique_values(df)
+    print_all_column_names(df)
 
 
 if __name__ == '__main__':
