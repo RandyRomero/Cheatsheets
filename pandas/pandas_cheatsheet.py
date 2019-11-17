@@ -9,9 +9,11 @@ def print_specific_columns(df):
     print(df[['date', 'name']])
 
 
-def remove_rows_with_nan_values(df: pd.DataFrame) -> None:
+def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     """
-    remove rows if there is a nan value in a specified column
+    remove rows if there is a nan value in a specified column and keep to df -
+    rows without nan values and rows only with nan values (for example to show
+    how many them there are)
 
     :param df: some typical dataframe
     :return: None
@@ -28,6 +30,7 @@ def remove_rows_with_nan_values(df: pd.DataFrame) -> None:
     columns_to_check = ['all cores', 'one core', 'total score']
     na_free = df_with_nan.dropna(axis=0, subset=columns_to_check)
 
+    # optionally:
     # save rows which were dropped to show them
     only_na = df_with_nan[~df_with_nan.index.isin(na_free.index)]
     print(f'{only_na.shape[0]} rows were dropped because they contain empty '
@@ -39,7 +42,7 @@ def remove_rows_with_nan_values(df: pd.DataFrame) -> None:
 def main():
     df = pd.read_excel('smartphones.xlsx')
     # print_specific_columns(df)
-    remove_rows_with_nan_values(df)
+    drop_rows_with_nan_values(df)
 
 
 if __name__ == '__main__':
