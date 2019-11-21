@@ -1,0 +1,4 @@
+######################################################################
+virtualenvwrapper create environment with a specific version of python
+
+mkvirtualenv -p python3.7 env
