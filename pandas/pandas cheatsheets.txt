@@ -14,6 +14,13 @@ df.nunique()
 count unique values in column:
 print(data['ИД услуги'].nunique())
 
+##############################################################
+count unique values:
+df['sex'].value_counts()
+male      577
+female    314
+Name: sex, dtype: int64
+
 
 ##############################################################
 print several specific columns:
@@ -24,12 +31,6 @@ df[['column_name', 'some_other_column_name"]]
 remove values if there is missing cells in specific columns:
 data = data.dropna(axis=0, subset=['Дата рождения застрахованного (или возраст)', 'Идентификатор застрахованного'])
 
-##############################################################
-count unique values:
-df['sex'].value_counts()
-male      577
-female    314
-Name: sex, dtype: int64
 
 
 
