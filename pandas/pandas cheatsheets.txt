@@ -1,10 +1,24 @@
 ##############################################################
+get a series of uniques values by columns
+
+example:
+date 70
+name 91
+all cores 89
+one core 89
+total score 91
+
+df.nunique()
+
+##############################################################
+count unique values in column:
+print(data['ИД услуги'].nunique())
+
+
+##############################################################
 print several specific columns:
 df[['column_name', 'some_other_column_name"]]
 
-##############################################################
-print entire dataframe:
-print(dt.to_string())
 
 ##############################################################
 remove values if there is missing cells in specific columns:
@@ -17,9 +31,7 @@ male      577
 female    314
 Name: sex, dtype: int64
 
-##############################################################
-count unique values in column:
-print(data['ИД услуги'].nunique())
+
 
 ##############################################################
 return cell value by cell value in another column in the same row:
@@ -93,3 +105,25 @@ df1: pd.DataFrame = data.groupby('INSURED_ID').filter(lambda x: x['INSURED_BIRTH
 remove rows from a df by subtracting from it another df
 
 df1 = df1[~df1.index.isin(df2.index)]
+
+##############################################################
+ # single out rows where there is more than one birthday for one insured
+    df1 = data.groupby('INSURED_ID').filter(lambda x: x['INSURED_BIRTHDAY'].nunique() > 1)
+
+##############################################################
+filter out rows with null values in a specific column
+null_brthds = data[~data['INSURED_BIRTHDAY'].notnull()]
+
+
+##############################################################
+drop specific columns
+data = data.drop(columns=['INSURED_AGE_WHEN_SERVICED'])
+
+##############################################################
+change value where there is another value
+data[data['Код диагноза'].str.len() == 1] = ''
+
+
+##############################################################
+make a new df where a value in a special column equals something
+broken_mkb = data[data['Код диагноза'].str.len() == 1]
