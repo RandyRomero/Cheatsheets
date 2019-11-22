@@ -7,28 +7,6 @@ pd.set_option('display.width', 1000)
 df_smartphones = pd.read_excel('smartphones.xlsx')
 
 
-def print_specific_columns(df):
-    """
-    example of output:
-
-          date                                         name
-    0  2019-06-19                Xiaomi Mi 9T (Snapdragon 730)
-    1  2019-06-17             Samsung Galaxy M20 (Exynos 7904)
-    2  2019-06-12          OPPO Reno 10x zoom (Snapdragon 855)
-    3  2019-06-10                           Realme C2 (MT6762)
-
-
-    choose one from these
-    ['date', 'name', 'all cores', 'one core', 'total score']
-
-    question number: 3a72ea3f-47bf-473d-bc0e-aa075b21ffdb
-    """
-    print()
-
-
-print_specific_columns(df_smartphones)
-
-
 def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     """
     ....and save rows which were dropped to show them
@@ -49,21 +27,6 @@ def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
                              'total score']] < 1000] = pd.np.nan
 
     # your code here...
-
-def get_series_of_unique_values_by_columns(df: pd.DataFrame) -> None:
-    print(df.nunique())
-
-
-def get_number_of_unique_values(df: pd.DataFrame) -> None:
-    print(df['name'].nunique())
-
-
-def print_series_containing_counts_of_unique_values(df: pd.DataFrame) -> None:
-    print(df['date'].value_counts())
-
-
-def print_all_column_names(df: pd.DataFrame) -> None:
-    print(list(df))
 
 
 def foo(df: pd.DataFrame) -> None:
