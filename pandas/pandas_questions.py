@@ -29,6 +29,53 @@ def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     # your code here...
 
 
-def foo(df: pd.DataFrame) -> None:
-    print(df.groupby('date')['name'].nunique().sort_values(ascending=False))
+def groupby_unique() -> None:
+    """
+    Find if a value within one particular column has more than one unique value
+    in another column of this dataframe. For example, find if there are people
+    from the same city. Or if any value that should have only one unique
+    value has more than one
+
+    :return: None
+
+    question number: 3e713c33-9c49-488c-a1cf-b104a5fd1af2
+
+    """
+
+    df = pd.DataFrame({'Name': ['Corey', 'Harrison', 'Michael', 'David'],
+                       'City': ['Vancouver',
+                                'Miami',
+                                'Portland',
+                                'Miami']})
+
+    # your code here
+
+    # output: True
+
+def groupby_unique_filter() -> None:
+    """
+    Make a new df from the other one if in the other one there are some values
+    within a specific column that have more than one (or N) unique values
+    in the other column. For example, group people by city. Or find rows
+    where insured has more than one birthday due to corrupt data
+
+    question number: 587ad19f-711c-40db-bc49-e2198328bd17
+
+    """
+
+    df = pd.DataFrame({'Name': ['Corey', 'Harrison', 'Michael', 'David'],
+                       'City': ['Vancouver',
+                                'Miami',
+                                'Portland',
+                                'Miami']})
+
+    # your code here
+
+    """
+    output
+    
+    1    Harrison
+    3       David
+    Name: Name, dtype: object
+    """
 
