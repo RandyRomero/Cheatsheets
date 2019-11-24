@@ -1,0 +1,26 @@
+tm############################################
+see all tmux sessions
+tmux ls
+
+############################################
+attach to a named session
+tmux a -t name_of_a_session
+
+############################################
+attach to a session by its number
+tmux a -t n (where -t stands for target session and n for that session number).
+
+############################################
+kill pane
+ctrl+b, x
+
+############################################
+create a new named session
+tmux new -s session_name
+
+############################################
+kill session by name or by its number
+
+############################################
+kill current session
+ctrl + b, :, kill-session
