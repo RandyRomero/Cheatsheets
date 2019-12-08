@@ -1,0 +1,6 @@
+##############################################
+How to get index of an item within the list by this item?
+l = ['sport', 'sex', 'soul']
+l.index('soul')
+2
+
