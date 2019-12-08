@@ -7,6 +7,24 @@ pd.set_option('display.width', 1000)
 df_smartphones = pd.read_excel('smartphones.xlsx')
 
 
+def create_series() -> None:
+    """
+    Create pandas Series with
+    - data: [145 , 142 , 38 , 13],
+    - name: 'counts'
+    - indexes: ['Paul', 'John', 'George', 'Ringo']
+
+    Output:
+    Paul      145
+    John      142
+    George     38
+    Ringo      13
+    Name: counts, dtype: int64
+
+    question number: '8210081f-37a6-441f-a540-af9f1c6b84c1'
+    """
+
+
 def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     """
     ....and save rows which were dropped to show them
