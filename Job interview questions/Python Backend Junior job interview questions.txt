@@ -1,0 +1,40 @@
+Python and CS:
+- what's GIL - why it is needed, what it does, etc
+- difference between ascyncio, threads and processes
+- which built-in functions return generators?
+- how does Set, List and Dict work under the hood in Python?
+ - hash tables: how do they work, whats the best access time, what's the worst, collisions
+ - why can't keys of a dict be of a mutable type?
+
+- OOP Principles
+ - what's inheritance
+ - what's polimorphism
+ - what's encapsulation
+
+Algorithms and data structures:
+- what's tree
+- difference between a queue and a stack (LIFO and FIFO)
+- difference between array and linked lists
+- what's a binary search, how does it work, what the complexity of it?
+
+Backend / networks:
+- diff between nginx and gunicorn
+- what's CRUD
+- what's REST
+- difference between SOAP and REST
+- what are versions of HTTP? What's the difference?
+- How is http request looks like?
+
+Databases:
+- how to get data from two tables using foreign key?
+- what's indexing? What are different type of indexing?
+- difference between relational and not relational databases?
+- what's groupby?
+- what are different type of join and what's the difference?
+
+
+
+
+
+
+
