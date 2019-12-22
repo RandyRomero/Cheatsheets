@@ -1,25 +1,19 @@
-##############################################################
-get a series of uniques values by columns
+#############################################################
+Get number of non-NaN items within a pandas Series
+some_series.count()
 
-example:
-date 70
-name 91
-all cores 89
-one core 89
-total score 91
+#############################################################
+Get mean values for items in a pandas Series
+some_series.mean()
 
-df.nunique()
+#############################################################
+Drop all items from a pandas Series which are less than 100
+songs = pd.Series([145 , 142 , 38 , 13], name='counts', index=['Paul', 'John', 'George', 'Ringo'])
+songs = songs[songs > 100]
 
-##############################################################
-count unique values in column:
-print(data['ИД услуги'].nunique())
-
-##############################################################
-count unique values:
-df['sex'].value_counts()
-male      577
-female    314
-Name: sex, dtype: int64
+#############################################################
+Get size of a pandas Series
+some_series.size
 
 
 ##############################################################
@@ -31,8 +25,16 @@ df[['column_name', 'some_other_column_name"]]
 remove values if there is missing cells in specific columns:
 data = data.dropna(axis=0, subset=['Дата рождения застрахованного (или возраст)', 'Идентификатор застрахованного'])
 
+##############################################################
+count unique values:
+df['sex'].value_counts()
+male      577
+female    314
+Name: sex, dtype: int64
 
-
+##############################################################
+count unique values in column:
+print(data['ИД услуги'].nunique())
 
 ##############################################################
 return cell value by cell value in another column in the same row:
@@ -128,3 +130,40 @@ data[data['Код диагноза'].str.len() == 1] = ''
 ##############################################################
 make a new df where a value in a special column equals something
 broken_mkb = data[data['Код диагноза'].str.len() == 1]
+
+
+##############################################################
+select second column
+df.iloc[:, 1]
+
+##############################################################
+select first row
+df.iloc[0]
+
+##############################################################
+df.iloc[:, 4] = df.iloc[:, 4].str.replace('№ ', '', regex=False)
+
+##############################################################
+find all rows where some strings in a column contain specific characters
+df = df[df.iloc[:, 4].str.contains('№')]
+
+##############################################################
+dispaly long strings in a dataframe
+pd.set_option('display.max_colwidth', 200)
+
+
+##############################################################
+get one row as a dataframe
+df.iloc[[94]]
+
+##############################################################
+a |= b means a = a or b
+
+##############################################################
+df_old.sort_values(by='Дата услуги', inplace=False)
+
+by several columns
+df_old.sort_values(by=['Uniq_id', 'Дата услуги'], inplace=True)
+
+##############################################################
+df2 = pd.DataFrame(index=df1.index)
