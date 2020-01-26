@@ -7,6 +7,7 @@ authors = ["RandyRomero <a.ya.miheev@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 pandas = "^0.25.3"
+xlrd = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 
