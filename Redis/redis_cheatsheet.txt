@@ -1,5 +1,21 @@
+Redis stands for Remote Dictionary Service
+
+Redis keys are always strings
+
 Show all keys:
 KEYS '*'
+
+Set a key value pair such as "Pink":"Panter" for example
+SET Pink Panther
+
+Get a value by its key (for example Pink)
+GET Pink
+
+Set multiple key-value pairs in one command:
+MSET Lebanon Beirut Norway Oslo France Paris
+
+Get multiple key-value pairs in one command:
+MGET Lebanon Norway Bahamas
 
 Show the list of all set members:
 smembers 'your_set_name'
