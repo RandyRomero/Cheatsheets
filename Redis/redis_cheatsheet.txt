@@ -17,6 +17,13 @@ MSET Lebanon Beirut Norway Oslo France Paris
 Get multiple key-value pairs in one command:
 MGET Lebanon Norway Bahamas
 
+Check if a key does exist in Redis
+EXISTS your_key
+return either 0 or 1
+
+Set a value in a Redis-hash
+HSET your_key your_nested_key your_value
+
 Show the list of all set members:
 smembers 'your_set_name'
 
