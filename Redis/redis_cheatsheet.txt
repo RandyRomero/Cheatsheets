@@ -2,36 +2,153 @@ Redis stands for Remote Dictionary Service
 
 Redis keys are always strings
 
-Show all keys:
+============================================= Show all keys ==========================================
 KEYS '*'
 
-Set a key value pair such as "Pink":"Panter" for example
-SET Pink Panther
+========================================== Set a key value pair =====================================
+SET mykey myvalue
 
-Get a value by its key (for example Pink)
-GET Pink
+================================== Get a value by its key (for example Pink) =========================
+GET mykey
+"myvalue"
 
-Set multiple key-value pairs in one command:
-MSET Lebanon Beirut Norway Oslo France Paris
+==============================================  Del a key value pair ==================================
+DEL your_key
+returns 0 or 1 depending on was the key-value pair deleted or not
 
-Get multiple key-value pairs in one command:
-MGET Lebanon Norway Bahamas
-
+=============================================== Check if a key exists ==================================
 Check if a key does exist in Redis
 EXISTS your_key
 return either 0 or 1
 
-Set a value in a Redis-hash
+======================================== Set a value only if the key does not exist =====================
+SET my_key my_value nx
+127.0.0.1:6379> SET my_key my_val nx
+OK
+127.0.0.1:6379> GET my_key
+"my_val"
+127.0.0.1:6379> SET my_key your_val nx
+(nil)
+127.0.0.1:6379> GET my_key
+"my_val"
+
+
+============================= Set a value only if the key does exist ====================================
+SET your_key some_val xx
+
+127.0.0.1:6379> set your_key some_val xx
+(nil)
+127.0.0.1:6379> get your_key
+(nil)
+127.0.0.1:6379> set your_key some_val
+OK
+127.0.0.1:6379> get your_key
+"some_val"
+127.0.0.1:6379> set your_key new_val xx
+OK
+127.0.0.1:6379> get your_key
+"new_val"
+
+============================== Set a new value to the key while getting the old one =====================
+GETSET
+127.0.0.1:6379> GETSET your_key Petya
+(nil)
+127.0.0.1:6379> GETSET your_key Vasya
+"Petya"
+127.0.0.1:6379> GETSET your_key Kolya
+"Vasya"
+127.0.0.1:6379> GETSET your_key Arnold
+"Kolya"
+
+============================================= Set/get key-value pairs in one command =============================
+Set multiple:
+MSET Lebanon Beirut Norway Oslo France Paris
+Ok
+
+Get multiple:
+MGET Lebanon Norway Bahamas
+1) "Beirut"
+2) "Oslo"
+3) "Nassau"
+
+
+============================================ Set a value in a Redis-hash ===============================================
 HSET your_key your_nested_key your_value
 
-Show the list of all set members:
-smembers 'your_set_name'
+===================================== Set multiple key-value pairs within a hash =======================================
+HMSET movies mask 1994 fear_and_loathing 1998 men_in_black 1997
 
-Get keys of a specific hash:
+===================================== Get keys of a specific hash: =====================================================
 HKEYS you_hash_name
 
-Get keys and values of a specific hash:
+==================================== Get keys and values of a specific hash ============================================
 HGETALL your_hash_name
 
-Del a key in a hash:
+================================================ Del a key in a hash ===================================================
 HDEL your_hash_name your_key_name
+
+=========================================== Show a type of a value by its key ==========================================
+TYPE yourkey
+
+> SET mykey x
+OK
+> TYPE mykey
+string
+> DEL mykey
+(integer) 1
+> TYPE mykey
+none
+
+============================================ Increment / decrement a number ============================================
+
+127.0.0.1:6379> SET counter 100
+OK
+127.0.0.1:6379>GET counter
+"100"
+127.0.0.1:6379> INCR counter
+(integer) 101
+127.0.0.1:6379> GET counter
+"101"
+127.0.0.1:6379> DECR counter
+(integer) 100
+127.0.0.1:6379>
+
+
+========================================== Show the list of all set members ============================================
+smembers 'your_set_name'
+
+
+========================================== Set a timeout to a key ======================================================
+To an existing key:
+
+> SET key some-value
+OK
+> EXPIRE key 5
+(integer) 1
+> GET key (immediately)
+"some-value"
+> GET key (after some time)
+(nil)
+
+Set timeout while setting a key-value
+> SET key 100 ex 10
+OK
+> TTL key
+(integer) 9
+
+====================================== LPUSH, RPUSH, LRANGE ============================================================
+
+LPUSH - adds a value to the beginning of a list
+RPUSH - adds a value at the end of a list
+LRANGE - returns range of values
+
+> RPUSH mylist A
+(integer) 1
+> RPUSH mylist B
+(integer) 2
+> LPUSH mylist first
+(integer) 3
+> LRANGE mylist 0 -1
+1) "first"
+2) "A"
+3) "B"
