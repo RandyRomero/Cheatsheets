@@ -1,0 +1,9 @@
+Viewing networks
+docker network ls
+
+Create network for containers to be able to communicate with each other (it's of a bridge type by default):
+docker network create my-network-name
+
+Inspect a network
+docker network inspect name
+
