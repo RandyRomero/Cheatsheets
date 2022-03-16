@@ -7,7 +7,7 @@ authors = ["RandyRomero <a.ya.miheev@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 xlrd = "^1.2.0"
-aiohttp = "^3.7.3"
+aiohttp = "^3.7.4"
 mypy = "^0.812"
 asyncpg = "^0.22.0"
 aio-pika = "^6.8.0"
