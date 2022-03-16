@@ -20,6 +20,7 @@ tmux new -s session_name
 
 ############################################
 kill session by name or by its number
+tmux kill-session -t your_session_name
 
 ############################################
 kill current session

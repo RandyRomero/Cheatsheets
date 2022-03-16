@@ -1,0 +1,5 @@
+get all available keys:
+
+r = redis.Redis()
+ks = [key for key in r.scan_item('*')]
+

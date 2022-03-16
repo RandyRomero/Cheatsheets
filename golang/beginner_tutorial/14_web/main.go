@@ -1,0 +1,46 @@
+package main
+
+import (
+	"io/ioutil"
+	"log"
+	"net/http"
+	"net/url"
+	"strconv"
+)
+
+const hrmUser = "http://test.gateway.pik-pro.ru/hrm/api/v1/users/"
+const jwtToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTQzMjAsInBob25lIjoiKzc5MTY0ODcxMjM2IiwiaXNfYWN0aXZlIjp0cnVlLCJncm91cHMiOlsiYWRtaW4iXSwic2VjdGlvbiI6MTc5LCJsZWdhbF9lbnRpdHlfaWQiOjEzNzgsImFkZGl0aW9uYWxfcGhvbmVzIjpbIis3OTE1NDY4NzU3NSJdLCJoYXNfc2VzX2NvZGUiOnRydWUsInBlcm1pc3Npb25zIjp7ImFkbWluIjp7InNlY3Rpb25zIjpbMjQzLDkxLDEzLDEsMTEsMTAsNTMsMzIsMzMsMzQsMzYsMzcsMzgsMzksNDAsNTEsNTIsNjQsNjYsNzcsODAsODEsODIsODUsODYsODcsODgsODksOTAsOTMsNywxMDEsMTAyLDExMSwxMzQsMTMzLDEzNSwxMjIsMTE4LDExOSwxMjAsMTYsMTI1LDEyNiwxMjcsMTU4LDEyOCwxMzgsMTM5LDE0MCwxMDMsMTA0LDEwOCwxNDQsMTQ1LDE0NiwxNDksMTU2LDE1NywxNzcsMTc5LDE4MCwxODEsMTg1LDE4NiwxODcsMTkwLDE5MSwxOTIsMTkzLDE5NCwxOTUsMTk2LDE5NywxOTksMjAwLDEyMywxMjEsMjAxLDIwMiwyMDMsMTksMjA0LDIwNiwyMDgsMjEwLDIxMywyMTgsMjIxLDIyOSwyMzAsMjMyLDIzNCwyNDEsMjQ3LDI0OCwyNDksMjUxLDI1MiwyNTMsMjU1LDI1NiwyNTcsMjE5LDE3OCwyNjEsMjYyLDI2MywyNjYsMjY0LDIyMCwyNjUsMjY3LDI3MywyNzQsMjc1LDI3NiwyNzcsMjc5LDI4MSwyODIsMjg3LDI5MSwyOTMsMjk1LDMwMCwzMDIsMzAzLDMwNCwzMDUsMzA2LDMwNywzMTcsMzIxLDMyMiwzMjQsMzI5LDMzMCwzMzQsMzM1LDMzOCwzNDAsMzQxLDM0MywzNDQsMzQ1LDM0NiwzNDcsMzUyLDM1MywzNTQsMzU4LDM1OSwzNjQsMzY1LDM2NiwzNjcsMzY4LDM3MSwzNzYsMzc3LDM3OCwzNzksMzgwLDM4MSwzODUsMzg2LDM4NywzODgsMzg5LDM5MSwzOTIsMzk1LDM5NiwzOTcsMiwyMTEsMzA4LDMzOSwxNDMsMjA5LDIzMSwyMDcsMTgzLDg0LDI2OCwxMzYsMjkyLDM5NCwzNzIsNTQsMjMzLDEyNCwyMDUsMzQyLDIzNSwyODAsMjIyLDI5NiwyODgsMjQyLDE3LDI0NCwyNDUsMjQ2LDM0OCw3OSwzMTgsMzAxLDI1MCwzNjksMTUwLDIxNCwyODMsMjU0LDMyMywyNzgsMzI1LDk0LDE0LDM4Miw0MiwyOTcsMTk4LDM3MCwyODQsMTgyLDIzNywyODksMjE1LDMxOSw4MywzMDksOTUsMjEyLDM3MywzMjYsMTgsMjIzLDMzMiwzOTAsMTMxLDI2OSw0LDI3MiwzMzcsMTQ3LDE1MSw3MSwzNDksMTI5LDUsMjkwLDEwNSw5NiwzNzQsMTMwLDE0OCw3MiwzMjAsMjk0LDE1MiwyMTYsMzMzLDIyNCw5MiwyOTgsMzI3LDE4OSwyNzAsMzEwLDI4NSwzMzYsMzUwLDE4NCw5Nyw2LDMxMSwyMTcsNjEsMTA2LDMyOCwzNzUsMzMxLDM1MSwyMjUsNzMsMTUzLDI5OSwxNTksMjg2LDE3Niw2Miw5OCwzMTIsMjM4LDI3MSwxNTQsMTg4LDc0LDEzMiwyMjYsMzEzLDE2MCw2MywyMjcsMzkzLDEwNywxNTUsNzUsMzYwLDk5LDIzOSw3NiwzMTQsMTAwLDEzNywyNDAsMTYxLDM2MSwyMjgsMzYyLDE2MiwyNTksMzE1LDMxNiwxNjMsMTA5LDI2MCwzNjMsMTY0LDI1OCwyMzYsMTY1LDE2NiwxNjcsMTY4LDE2OSwxNzAsMTcxLDE3MiwxNzMsMTc0LDE3NSwzODQsMzgzLDM1NiwzNTcsMzU1XX19LCJhdXRoX3Blcm1pc3Npb25zIjp7ImF1dGgiOjF9LCJwYXlsb2FkX3ZlcnNpb24iOjcsImN1cnJlbnRfc2VjdGlvbiI6bnVsbCwibW9kaWZpZWRfYXQiOjE2MjYxMTE1ODIsInJlZnJlc2hfdG9rZW5fbW9kaWZpZWRfYXQiOjAsInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE2MjgxOTQ0NjN9.9GZQkfibWlFNJNdJ8HFc5Lot04OW1zW60cpnSgjIejQ"
+
+func getUser(userId int) {
+
+	url, _ := url.Parse(hrmUser)
+	queryParameters := url.Query()
+	queryParameters.Add("id", strconv.Itoa(userId))
+	url.RawQuery = queryParameters.Encode()
+
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", url.String(), nil)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	req.Header.Add("Authorization", "JWT "+jwtToken)
+	resp, err := client.Do(req)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	//We Read the response body on the line below.
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	//Convert the body to type string
+	sb := string(body)
+	log.Printf(sb)
+}
+
+func main() {
+	getUser(14320)
+}

@@ -1,0 +1,25 @@
+Redis data types and more:
+
+Redis data types:
+0. Binary-safe strings.
+1. Lists: collections of string elements sorted according to the order of insertion. They are basically linked lists.
+2. Sets: collections of unique, unsorted string elements.
+3. Sorted sets, similar to Sets but where every string element is associated to a floating number value, called score. The elements are always taken sorted by their score, so unlike Sets it is possible to retrieve a range of elements (for example you may ask: give me the top 10, or the bottom 10).
+4. Hashes, which are maps composed of fields associated with values. Both the field and the value are strings. This is very similar to Ruby or Python hashes.
+5. Bit arrays (or simply bitmaps): it is possible, using special commands, to handle String values like an array of bits: you can set and clear individual bits, count all the bits set to 1, find the first set or unset bit, and so forth.
+6. HyperLogLogs: this is a probabilistic data structure which is used in order to estimate the cardinality of a set. Don't be scared, it is simpler than it seems... See later in the HyperLogLog section of this tutorial.
+7. Streams: append-only collections of map-like entries that provide an abstract log data type. They are covered in depth in the Introduction to Redis Streams.
+
+========================================== Keys =====================================================================
+What are Redis keys?
+Redis keys are binary sequences, which means you can use as a key string like "foo" as well as content of a JPEG file
+
+- The maximum allowed key size is 512 MB. But very long keys, even 1024 Kb, is a bad idea not only memory-wise, but also
+because it make lookup of a key costlier
+
+
+============================================ Lists ====================================================================
+
+Redis List are actually linked list - it has constant time of putting something to any part of the list, but looking
+up for a value grows proportionally with the length of the list
+

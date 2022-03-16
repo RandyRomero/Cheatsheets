@@ -6,6 +6,28 @@ pd.set_option('display.width', 1000)
 
 df_smartphones = pd.read_excel('smartphones.xlsx')
 
+def create_series() -> None:
+    """
+    Create pandas Series with
+    - data: [145 , 142 , 38 , 13],
+    - name: 'counts'
+    - indexes: ['Paul', 'John', 'George', 'Ringo']
+
+    Output:
+    Paul      145
+    John      142
+    George     38
+    Ringo      13
+    Name: counts, dtype: int64
+
+    question number: '8210081f-37a6-441f-a540-af9f1c6b84c1'
+    """
+
+    songs = pd.Series([145, 142, 38, 13],
+                      name='counts',
+                      index=['Paul', 'John', 'George', 'Ringo'])
+    print(songs)
+
 
 def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     """
@@ -91,5 +113,3 @@ def groupby_unique_filter() -> None:
     3       David
     Name: Name, dtype: object
     """
-
-groupby_unique_filter()

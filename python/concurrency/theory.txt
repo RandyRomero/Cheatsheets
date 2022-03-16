@@ -1,0 +1,21 @@
+###########################################################################
+
+What's GIL?
+
+Global Interpreter Lock
+
+An interpreter that uses GIL always allows exactly one thread to execute at a time,
+even if run on a multi-core processor.
+
+
+
+###########################################################################
+
+- what's GIL - why it is needed, what it does, etc
+- diff between nginx and gunicorn
+- tree
+- difference between ascyncio, threads and processes
+- what's groupby
+- complexity of different operations
+- what's crud
+- what's REST

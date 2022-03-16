@@ -1,48 +1,44 @@
+######################################################
 To compare any pair of branches:
 git diff --name-status firstbranch..yourBranchName
 
+######################################################
 Viewing history of commits:
 git log
 
+######################################################
 Start a new git repository:
 http://kbroman.org/github_tutorial/pages/init.html
 
+######################################################
 First setup:
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
+######################################################
 Set another branch for upstreaming:
 git push --set-upstream origin %another branch%
 
+######################################################
 Download branch to local:
-git pull origin <branch>
+git pull origin branch_name
 
-undo remote commit:
-git revert <commit>
-
+######################################################
 See changes which have been staged:
 git diff --cached
 
-unstage file:
-git reset <file>
-
+######################################################
 Amending the most recent commit message:
 git commit --amend -m "New commit message"
 
+######################################################
 Add and commit directly in a new branch:
 git checkout -b <new-branch>
 git add .
 git commit -m "your message here"
 
-Trasfer changes to another (existing) branch:
-git stash -u (if changes were not added) or git stash (if changes were added but not committed)
-git checkout whateverBranch
-git stash pop
 
-See what was changed in commit:
-Last commit: git show
-Several commits: git show -3 (or another number of commits)
-
+######################################################
 Cancel commit, but retain what's was changed:
 git reset HEAD~1
 but if you have something that is not commited, non commited changes will be erased, so
@@ -50,12 +46,15 @@ git stash
 git reset HEAD~1
 git stash pop 
 
+######################################################
 Show list of branches:
 git branch
 
+######################################################
 Show last commit on every branch:
 git branch -v
 
+######################################################
 Remove a folder from my git repository without deleting it from my local machine:
 Step 1. Add the folder path to your repo's root .gitignore file.
 path_to_your_folder/
@@ -63,24 +62,45 @@ Step 2. Remove the folder from your local git tracking, but keep it on your disk
 git rm -r --cached path_to_your_folder/
 Step 3. Push your changes to your git repo.
 
+######################################################
 This repository moved. Please use the new location:
 git remote set-url origin [updated link url https://........git]
 
+######################################################
 Handle line endings on different OS:
 You can change the configuration manually by running git config --global core.autocrlf true on Windows or git config --global core.autocrlf input on Linux and macOS.
 
+######################################################
 Create a branch in Git from another branch:
-git checkout -b newBranch oldBranch
+git branch newBranch oldBranch
 
+######################################################
 Delete locale branch:
 git branch -d your_branch
 
+######################################################
 Delete remote branch:
 git push origin -d your_branch
 
+######################################################
 See which files have been staged:
 git diff --name-only --cached
 
+######################################################
 Check how many commits your branch is ahead of another branch:
 git rev-list --left-right --count branch_name...another_branch_name
+
+######################################################
+How to unstage all staged files:
+git reset
+
+######################################################
+How to stash by name and pop that stash:
+git stash push -m aNameForYourStash
+git stash list
+git stash pop --index 0
+
+#######################################################
+clear all your stashes
+git stash clear
 

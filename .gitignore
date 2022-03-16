@@ -1,2 +1,4 @@
 .idea/
-*.xlsx#
+*.xlsx
+
+python/job_interview_tasks/numbers_file.txt

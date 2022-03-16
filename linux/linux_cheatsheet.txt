@@ -1,11 +1,42 @@
-**unrar .rar archive with password:
+###############################################
+unrar .rar archive with password:
 sudo apt-get install unrar
 unrar x filename.rar
 You will be asked for the password, so type it in and press enter.
 
-**copy files from / to server:
+###############################################
+copy files from server:
 scp -r robot@172.20.140.200:~/fraud_detection/recommendations/production/output/rgs3_results.xlsx 801_02-05.2019_output.xls
 
+###############################################
+copy files to server:
 scp apply_rules.py robot@172.20.140.200:~/fraud_detection/recommendations/production/apply_rules.py
 
+###############################################
+show history of commands
+>> history 
 
+###############################################
+find command in history:
+>> history | grep your_search_word
+
+
+###############################################
+zip a directory
+zip -r your_archive.zip your_directory
+
+###############################################
+zip a directory with password
+zip -re your_archive.zip your_directory
+
+###############################################
+list file as a table with dates and permissions
+ls -l
+
+###############################################
+run command in a background
+command & — команда выполняется в фоновом режиме. Как служба.
+
+###############################################
+run command in the background with logging to a file
+command & » my_file.log

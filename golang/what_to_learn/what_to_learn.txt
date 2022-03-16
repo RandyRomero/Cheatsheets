@@ -1,0 +1,243 @@
+python:
+- https://scoutapm.com/blog/python-garbage-collection
+- https://youtu.be/eirjjyP2qcQ Python Tutorial: Datetime Module - How to work with Dates, Times, Timedeltas, and Timezones
+- https://realpython.com/python-time-module/
+- https://habr.com/ru/post/432996/ python dictonaries
+- https://youtu.be/V2PkkMS2Ack Trey Hunner: Loop better: a deeper look at iteration in Python
+- difference between threading and asyncio
+- how does theading work under the hood?
+- when and what switches between threads?
+- problems of threading
+- problems of async
+- where to choose threading over async or vice versa
+- https://snarky.ca/designing-an-async-api-from-sans-i-o-on-up/?fbclid=IwAR1GQGy2PYHKbvPXw9pmQik2geMFxbLWJ8y-7lrwX3qijrc6j8ghMdxUaRY
+- Dataclasses vs typed dict vs named tuples
+- https://melevir.medium.com/python-functions-naming-the-algorithm-74320a18278d
+- https://realpython.com/python-data-structures/
+- https://realpython.com/absolute-vs-relative-python-imports/
+- Python list/set/dict comprehensions
+- https://realpython.com/python-redis/
+- https://realpython.com/python-json/
+- Типы и утиная типизация - drylabs
+- Метапрограммирование - drylabs
+- Пакеты, модули, импорты - drylabs
+- Итераторы, генераторы… сопроцедуры - drylabs
+- https://realpython.com/python-memory-management/
+- https://www.youtube.com/watch?v=WJmqgJn9TXg pydantic
+- https://www.bestinterviewquestion.com/django-interview-questions
+- https://dbader.org/blog/python-first-class-functions
+- what's python string
+- singleton in Python - why and how
+- https://towardsdatascience.com/understand-how-to-use-namedtuple-and-dataclass-in-python-e82e535c3691
+- https://realpython.com/lru-cache-python/
+- What's PEP?
+- https://docs.djangoproject.com/en/3.1/ref/contrib/postgres/search/
+- context managers in Python
+- what's overloading in Python?
+- https://towardsdatascience.com/a-better-way-for-asynchronous-programming-asyncio-over-multi-threading-3457d82b3295
+- time complexity of search in Python list
+- What sorting does Python use under the hood?
+- https://www.augmentedmind.de/2020/10/25/marshmallow-vs-pydantic-python/#:~:text=While%20Pydantic%20returns%20a%20Python,classes)%20is%20an%20optional%20step.
+- https://blog.thea.codes/my-python-testing-style-guide/#a-mock-must-always-have-a-spec
+- with contextlib.suppress(SomeError) https://link.medium.com/ziZugycvFeb
+- walrus operator in Python
+- Time complexity of common Python operations
+- https://realpython.com/python-defaultdict/
+- https://www.youtube.com/watch?v=ixbi_OeTsUc walrus operator in 5 minutes
+- https://youtu.be/HPsm4eOaR8I what can be a key in a dict
+- https://youtu.be/pMgmKJyWKn8 Type-checked Python in the real world
+- https://youtu.be/0kXaLh8Fz3k Thinking Outside the GIL with AsyncIO and Multiprocessing - PyCon 2018
+- https://youtu.be/2vmvtxHVPJI Python Lists vs Arrays
+- https://youtu.be/BHjDtalHVV8 Асинхронный Python и PostgreSQL с использованием asyncpg
+- https://youtu.be/WpYXgsI7RKc как python оптимизирует работу с памятью
+- https://youtu.be/cdHnEN0Dsm0 Настраиваем flake8, чтобы улучшить качество кода
+- https://youtu.be/Kc1Q_ayAeQk Introduction to Django Signals | Django (3.0) Crash Course Tutorials (pt 18)
+- https://youtu.be/Qe8YI5wXJng Django Middleware — что это, зачем и как использовать
+- https://youtu.be/3ndEeGDVqD4 Лёгкое логирование в Python с Loguru. Замена встроенной библиотеке logging
+- https://youtu.be/9AHe6NhLs0s Ты неправильно замеряешь время в Python! Или нет?
+- https://youtu.be/cihyLRepSF8 Python Dictionaries - Selecting a Dictionary Type
+- https://realpython.com/python-namedtuple/
+- https://realpython.com/courses/working-json-data-python/
+- https://realpython.com/knn-python/
+- https://www.programiz.com/python-programming/numbers#dec
+- python what's byte array
+- https://www.guru99.com/python-counter-collections-example.html
+- python Deque
+- python Queue / PriorityQueue
+- https://realpython.com/python-heapq-module/
+- https://www.youtube.com/watch?v=S0No2zSJmks When Python Practices Go Wrong - Brandon Rhodes
+- https://www.youtube.com/watch?v=e7RVO0Sqr4s Keynote: Typesetting with Python - Brandon Rhodes
+- https://docs.djangoproject.com/en/3.2/topics/db/aggregation/ + https://docs.djangoproject.com/en/3.2/ref/models/querysets/#aggregation-functions
+- what's fixture in pytest
+- https://realpython.com/python-data-classes/#optimizing-data-classes
+- https://hackthedeveloper.com/python-data-class-parameters/
+- https://bradfieldcs.com/algos/analysis/performance-of-python-types/
+- https://www.youtube.com/watch?v=pN9A5kD_rK8 Аsync и await в production / Сергей Борисов (ДомКлик)
+- https://habr.com/ru/post/420129/ asyncio
+- https://www.youtube.com/watch?v=Q3WyANoWES8 Проектируем новый статический анализатор Никита Соболев
+- https://www.youtube.com/watch?v=K8L6KVGG-7o regex in Python
+- https://youtu.be/xGY45EmhwrE Python Performance at Scale - Making Python Faster at Instagram
+- https://death.andgravity.com/namedtuples
+- https://www.programmersought.com/article/20521542180/ The underlying implementation of list, tuple, dictionary, set in python
+- https://www.youtube.com/watch?v=3QiPPX-KeSc Python Socket Programming Tutorial
+- https://medium.com/vaidikkapoor/understanding-non-blocking-i-o-with-python-part-1-ec31a2e2db9b  Understanding Non Blocking I/O with Python — Part 1
+- https://www.youtube.com/watch?v=Y4Gt3Xjd7G8 Build Your Own Async // David Beazley
+- https://www.youtube.com/watch?v=E-1Y4kSsAFc Fear and Awaiting in Async // David Beazley
+- https://youtu.be/SyiTd4rLb2s how to write a chat (server + clients) with asynchronous Python
+- https://youtu.be/DeFCdl0YLHU Intro to Pydantic, Run-Time Type Checking For Your Dataclasses
+- https://youtu.be/MLSq3ZwMaKI Let REST Do Rest: Deep Dive In GraphQL With Django
+- https://www.youtube.com/watch?v=-PRNm2IG10o&t=1s  Поиск похожих документов
+- https://youtu.be/ea1vdoU5uVo "Event-Driven applications: Apache Kafka and Python" by: Francesco Tisiot
+- https://youtu.be/_jh4Wc3CE38 An Introduction to FastAPI
+- https://youtu.be/ApDThpsr2Fw Bernát Gabor / Python Packaging Demystified
+- https://youtu.be/R1KrPc1IOeE  Graham Bleaney, the_storm/ Unexpected Execution: Wild Ways Code Execution can Occur in Python
+- https://youtu.be/DPqhV21tSAc Getting an Edge with Network Analysis with Python
+- https://youtu.be/A-3_Iw6KNCw Python Memory Deep Dive for Speed and Efficiency" by: Michael Kennedy
+- https://hynek.me/articles/python-subclassing-redux/
+- https://martinheinz.dev/blog/52  Functools - The Power of Higher-Order Functions in Python
+- https://medium.com/python-pandemonium/asyncio-coroutine-patterns-beyond-await-a6121486656f
+- https://bradfieldcs.com/algos/analysis/performance-of-python-types/
+- https://towardsdatascience.com/cpython-internals-how-do-generators-work-ba1c4405b4bc
+- https://www.youtube.com/watch?v=F19R_M4Nay4 Demystifying Python's Async and Await Keywords
+- https://www.youtube.com/watch?v=0kXaLh8Fz3k John Reese - Thinking Outside the GIL with AsyncIO and Multiprocessing - PyCon 2018\
+- https://medium.com/swlh/cool-things-you-can-do-with-pydantic-fc1c948fbde0
+- https://youtu.be/olT7ejlv0uE Your app is async so take advantage of it for development!
+- https://youtu.be/j8iXO5VErjw Packaging Python in 2021
+- https://youtu.be/X0AjcpicNOM When is an exception not an exception? Using warnings in Python
+- https://youtu.be/Lj_9TyT3V98 Gradual Typing in Practice
+- https://youtu.be/kDDCKwP7QgQ Protocol: the keystone of type hints
+- https://youtu.be/NYUXNRswe6k The Road to Pattern Matching in Python
+- https://youtu.be/ANLjBsWHshc The magic of "self": How Python inserts "self" into methods.
+- https://youtu.be/VjFS-_H10bw No, Maybe and Close Enough: Using Probabilistic Data Structures in Python
+- https://youtu.be/Ltgt0ekso4c Event-driven applications: Apache Kafka and Python
+- https://blog.hipolabs.com/when-magic-isnt-that-magical-drf-viewsets-30adc1d325c7 drf viewsets
+- https://ducmanhphan.github.io/2020-02-24-fire-and-forget-pattern/
+- https://dev.to/tiangolo/the-future-of-fastapi-and-pydantic-is-bright-3pbm
+- https://mleue.com/posts/yield-to-async-await/
+
+
+
+cs:
+- linked lists
+- arrays
+- what's uuid / guid
+- what's callback?
+- What's mutex?
+- difference between hashing and encryption
+- What's heap?
+- FSM (finite state machine)
+- thread-safe data structures - what's that
+- https://youtu.be/Ee0HzlnIYWQ Big O: How Code Slows as Data Grows
+- https://realpython.com/courses/stacks-queues-ideal-data-structure/
+- https://manybutfinite.com/post/what-your-computer-does-while-you-wait/
+- implement a queue/stack/deque in python/rust/go
+- https://www.youtube.com/watch?v=tWVWeAqZ0WU&list=WL&index=1
+
+
+
+go/rust:
+- https://medium.com/rungo/structures-in-go-76377cc106a2 structs in go
+- https://medium.com/rungo/anatomy-of-methods-in-go-f552aaa8ac4a methods in go
+- https://medium.com/rungo/interfaces-in-go-ab1601159b3a go interfaces
+- what are goroutines
+- https://link.medium.com/EQtWtHljbgb gc in go
+- https://youtu.be/WiCru2zIWWs Microservices in Go
+- simple examples how to read and write csv files in go/rust
+- how to make get/post request with headers (for example to hrm)
+- module operator
+- https://www.sohamkamani.com/golang/json/
+
+
+
+docker/rabbitmq/graphql/nginx/redis:
+- https://dev.to/kubona_my/docker-101-124e docker 101
+- https://youtu.be/wn7s7podZWI Workshop: Getting Started with Docker
+- https://youtu.be/sZ1yK5fqWz0 Docker Live! Getting Started Q&A
+- what's graphql
+- https://betterprogramming.pub/introduction-to-message-queue-with-rabbitmq-python-639e397cb668
+- https://user3141592.medium.com/why-are-restful-apis-called-restful-5473338c9977
+- https://youtu.be/-ykwb1d0DXU helm
+- https://eng.lyft.com/improving-kubernetes-cronjobs-at-scale-part-1-cf1479df98d4
+- https://timewitch.net/post/2020-04-04-cronjob-retro/
+- https://www.youtube.com/watch?v=Hbt56gFj998 redis crash course
+- https://towardsdatascience.com/effective-microservices-10-best-practices-c6e4ba0c6ee2
+- https://towardsdatascience.com/microservice-architecture-a-brieGf-overview-and-why-you-should-use-it-in-your-next-project-a17b6e19adfd
+- what's redis
+- what is makefile and how to use it in development
+- https://youtu.be/WqrCnVAkLIo WSGI for Web Developers
+- https://youtu.be/SIdSeUkQH6U Пишем веб-аналитику на Go и Python c Redis.
+- some docker crash course
+- some nginx crash course
+- https://www.youtube.com/watch?v=e2IbNHi4uCI Git Branches Tutorial
+- https://www.tutorialworks.com/difference-docker-containerd-runc-crio-oci/
+- https://youtu.be/EC0CSevbt9k a best-practices process for Docker packaging
+- what is replica and what are type of replicas?
+
+
+
+
+databases:
+- https://www.postgresqltutorial.com/postgresql-json/
+- What's database normalization
+- https://www.datanamic.com/support/lt-dez005-introduction-db-modeling.html
+- Database transactions
+- Make a database with tables for tracking how many time you spend on studying (just with SQL)
+- Make a database with tables for tracking how many time you spend on studying (just with Django ORM)
+- What's vacuum in PostgreSQL?
+- transaction atomic
+- https://www.postgresqltutorial.com/postgresql-indexes/
+- https://www.postgresqltutorial.com/postgresql-views/
+- https://www.postgresqltutorial.com/postgresql-date/
+- https://dataschool.com/learn-sql/dates/
+- varchar vs text
+- transactions and isolation in Postgresql
+- https://www.postgresqltutorial.com/postgresql-numeric/
+- https://www.postgresqltutorial.com/postgresql-timestamp/
+- https://www.postgresqltutorial.com/postgresql-age/
+- How does database pooling work
+- https://betterprogramming.pub/database-connection-pooling-with-pgbouncer-d8766a8a2c85?gi=dc84928b52b6
+- https://www.postgresqltutorial.com/plpgsql-cursor/#:~:text=A%20PL%2FpgSQL%20cursor%20allows,have%20a%20memory%20overflow%20error.
+- https://heap.io/blog/engineering/when-to-avoid-jsonb-in-a-postgresql-schema
+- https://youtu.be/q9IXCdy_mtY PostgresOpen 2019 The Art Of PostgreSQL
+- https://youtu.be/W-nOdwlxmhA Почему тебе нужен PgBouncer, как его установить? Оптимизируем веб-приложения с PostgreSQ
+- https://youtu.be/HjLnY0aPQZo Топ ошибок со стороны разработки при работе с PostgreSQL
+- what is select for update and when do we need it
+- transactions in postgresql
+
+
+
+misc
+- https://martinfowler.com/articles/microservices.html
+- https://tproger.ru/articles/zadanija-s-sobesedovanija-na-poziciju-middle-backend-razrabotchika-s-primerami-na-python/
+- What's SOLID
+- https://www.freecodecamp.org/news/how-to-improve-your-debugging-skills/
+- What does API stand for?
+- git reflog
+- https://youtu.be/0fSi7o-tRzo how to read big code
+- https://youtu.be/ka9mMFI7f74 find, grep, ack, ripgrep
+- https://youtu.be/kclYmb47LTg Собираем масштабируемую архитектуру веб-приложения. Горизонтальное и вертикальное масштабирование
+- https://youtu.be/XM-SR1uc3b8 how to make a CV for a programmer
+- https://youtu.be/IVHv3eVQa14 Настраиваем аутентификацию SSH по ключу в Linux / Unix
+- what are web sockets
+- Http/https
+- what's going on when you open a site (dns, nginx)
+- what's mock/-ing
+- https://erik-engheim.medium.com/the-case-against-curly-braces-languages-dd0a55840fcbf
+- https://www.youtube.com/watch?v=vLxBZGbclxY Уйти нельзя остаться
+- https://youtu.be/GBTdnfD6s5Q When To Use Microservices
+- https://youtu.be/7EB1pmTfR5Y "Caching Best Practices" by: Moshe Zadka
+- https://youtu.be/iPs64t1nsSM Oops! I Became an Open Source Maintainer!
+- https://youtu.be/nT6UsVgJ0xw TUTORIAL / Marysia Winkels / (Serious) Time for Time Series
+- https://youtu.be/gdVf08sGwnM serverless application architecture
+- https://youtu.be/Q2E97qOdQfY "Debugging Your Brain" by: Casey Watts
+- https://youtu.be/bR5Dq3m5wMg "Ejector Seats and Escape Hatches: Designing Your API to Fail" by: Meredydd Luff
+- https://erik-engheim.medium.com/the-case-against-curly-braces-languages-dd0a55840fcb
+- https://youtu.be/2AdvBgjO_3Q Large Scale Data Validation (with Spark and Dask)
+- https://youtu.be/eWaWvUhpseM Writing Good Documentation for Developers
+- what are stack and heap? what does python use?
+- https://dev.to/ifierygod/git-and-github-the-complete-guides-chapter-1-23cp
+- https://www.youtube.com/watch?v=oBt53YbR9Kk&list=WL Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges
+
+
+interview questions
+- https://www.edureka.co/blog/interview-questions/oops-interview-questions/
