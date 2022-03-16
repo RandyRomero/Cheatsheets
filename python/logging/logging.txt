@@ -1,0 +1,3 @@
+how to disable a logger from third-library module
+
+getLogger('spyne.interface._base').disabled = True

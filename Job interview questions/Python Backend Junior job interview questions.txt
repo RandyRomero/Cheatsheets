@@ -21,6 +21,7 @@ Backend / networks:
 - diff between nginx and gunicorn
 - what's CRUD
 - what's REST
+- what does API stands for
 - difference between SOAP and REST
 - what are versions of HTTP? What's the difference?
 - How is http request looks like?

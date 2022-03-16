@@ -28,10 +28,6 @@ See changes which have been staged:
 git diff --cached
 
 ######################################################
-unstage file:
-git reset filename
-
-######################################################
 Amending the most recent commit message:
 git commit --amend -m "New commit message"
 
@@ -41,10 +37,6 @@ git checkout -b <new-branch>
 git add .
 git commit -m "your message here"
 
-######################################################
-See what was changed in commit:
-Last commit: git show
-Several commits: git show -3 (or another number of commits)
 
 ######################################################
 Cancel commit, but retain what's was changed:
@@ -107,3 +99,8 @@ How to stash by name and pop that stash:
 git stash push -m aNameForYourStash
 git stash list
 git stash pop --index 0
+
+#######################################################
+clear all your stashes
+git stash clear
+
