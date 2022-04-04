@@ -98,9 +98,9 @@ So if you have 128 elements in total, you have to process them 7 times (because 
 
 Though it's better than quadratic (O(n^2)) time complexity.
 
-1 items = ~1 operations
-100 items = ~665 operations
-1000 items = ~10,000 operations
+1 item = 1 operations
+128 items = 128 * 7 = 896 operations
+1024 items = 1024 * 10 = 10240 operations
 
 question id: 0b8b1b86-dfe1-49c4-87af-6a78efb6c545
 

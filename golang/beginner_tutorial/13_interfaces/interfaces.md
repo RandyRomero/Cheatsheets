@@ -70,7 +70,7 @@ question id: 771b4b44-7e6e-432c-9531-152047825f23
 
 ### What is the purpose of interfaces? What problem do they solve?
 
-Inteface makes possible to perform operations in bulk on a different types as long
+Interface makes possible to perform operations in bulk on a different types as long
 as these types implement the same interface.
 
 To perform something on types Cat, Dog, Parrot in Python you can just put them in list

@@ -355,11 +355,12 @@ func()
 question id: 6c0aef80-0871-42e8-8406-b52ab9e93b12
 
 
-### Where do you can use global statement? 
+### Where can you use global statement?
 
 It's legal to use it even in global scope, though it doesn't make sense.
 
-question id: 
+question id: f1652bc1-316e-4c6f-9c65-994eb9843799 
+
 
 ### What would be the output? 
 

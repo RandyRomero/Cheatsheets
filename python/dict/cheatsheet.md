@@ -31,7 +31,7 @@ keys = ("cats", "dogs", "parrots")
 dict.fromkeys(key, 0) # {'a': 0, 'b': 0, 'c': 0}
 
 # 2nd way
-{x:0 for x in keys} # {'a': 0, 'b': 0, 'c': 0}
+{key: 0 for key in keys} # {'a': 0, 'b': 0, 'c': 0}
 ```
 
 question id: 1e9cedeb-58c4-4bc8-badf-1d161fd04910
