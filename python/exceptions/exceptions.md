@@ -1,4 +1,4 @@
-### Make a custom exception `TooManyCalls` that accepts how many time left before cool down
+### Make a custom exception `TooManyCalls` that accepts how many time is left before the cool down
 
 ```python
 class TooManyCalls(Exception):
@@ -10,5 +10,7 @@ class TooManyCalls(Exception):
     def __str__(self):
         return self.message.format(self.timeout)
 ```
+
+https://www.programiz.com/python-programming/user-defined-exception
 
 question id: 1b0dc139-c5ec-4696-b507-82779a432165

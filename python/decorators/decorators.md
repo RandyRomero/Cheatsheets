@@ -360,6 +360,28 @@ say_whee()
 
 question id: 8a66fc67-e0c0-4315-ba47-d3586a67f4f5
 
+
+### Describe how throttling decorator in Python works
+
+Like Throttle in DRF which returns an error if you go to the same endpoint 
+more than N times per N seconds/minutes/hours etc
+
+0. You need a decorator that takes arguments: timeout and max number of calls within this timeout
+1. Define call counter and variable that saves point in time when timer should start.
+    For example, your function was called at 14:33:00, so until 14:33:05 you cannot make more than given number of calls
+2. At each call you have to increase call counter by one
+3. At each call you have to measure how many time passed since the first call in a row
+4. If there is more time passed than the time limit: 
+   - reset the call_counter, 
+   - reset point in time when the function was called for the first time in a row
+   - call decorated function with arguments
+5. If there call counter exceed the limit of attemtps - raise an error
+6. If time that passed have not exceed the limit and call_counter has not exceed the limit - just call
+   the decorated function with arguments
+
+question id: 13bec20b-f5f9-4384-a720-6911066e0179
+
+
 ### Write an example of a throttling decorator
 
 Like Throttle in DRF which returns an error if you go to the same endpoint 
@@ -378,6 +400,7 @@ class TooManyCalls(Exception):
         return self.message.format(self.timeout)
 ```
 
+answer:
 
 ```python
 from functools import wraps
