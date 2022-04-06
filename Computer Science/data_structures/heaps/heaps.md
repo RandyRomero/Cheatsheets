@@ -62,7 +62,7 @@ of parent and/or children nodes of any given element
 question id: 5a9a163a-400e-4f34-a433-8af476075806
 
 
-### What is 'to heappify'?
+### What is 'to heapify'?
 
 Rearrange a heap to maintain the heap property, that is, 
 the key of the root node is more extreme (greater or less) than or equal to the keys of its children.
@@ -117,7 +117,7 @@ answer:
 question id: ad044984-568b-4447-93c2-3e305497cdb8
 
 
-### What is time complexity of sift up (or down) operation in a binary heap and why?
+### What is time complexity of sift-up (or -down) operation in a binary heap and why?
 
 answer:
 
@@ -145,6 +145,70 @@ sift down this value to satisfy the heap property. And time complexity of siftin
 https://youtu.be/pLIajuc31qk
 
 question id: c6dd0120-235e-49d1-98f6-186a9a3bf4b6
+
+
+### What is time complexity of inserting a new node to a mix(or max) heap?
+
+It's O(log(n)). Why?
+First, you insert a value to the end of the heap. It's O(1).
+However, then you have to restore heap property of the heap, or, in other words, bubble up the value
+that you have just insorted if it less (or greater) than its parent. It's O(log(n))
+because the maximun number of times it will be swapped is limited by maximum number of levels in the
+heap, which is alway log(n) for a binary tree.
+
+question id: 14ccf126-2986-4643-816b-982bbadce7a3
+
+
+### What is time complexity of building a heap from an array (heapify) and why?
+
+It's O(n). Why?
+
+For example, we take sift-down approach and start from the end of the heap (bottom right leaf) and
+we go from right to left, from the bottom to the top.
+
+We know that time complexity of sift down is O(logn) and we need to appy it 
+to the half of the total number of element of the heap (half is because you do not have 
+to apply it to the very bottom of the heap because nodes there do not have children, and also the very bottom level 
+of complete binary tree contains half of the nodes of the tree),
+so it seems like building a heap takes (nlog(n/2)) which is the same as (nlog(n)).
+
+However, the real time complexity of buidling a heap is O(n). Why not log(n) as sift-down is log(n)?
+Because in reality elements don't have to go all the way down from the root node to the bottom level.
+Only to sift down the root node is log(n). To sift down the children of the root node would be at least one
+operation less for each as there are less levels to travers. For example, the level next to the 
+bottom contains a quarter of all elements, and for all of them there would be only one operation to sift them down.
+
+![building_heap_time_complexity.png](building_heap_time_complexity.png)
+
+question id: 579b2931-7b27-4a1a-b74d-791fa8a09d08
+
+
+
+### What is more preferred operation for building up a heap? Sift-up of sift-down? And why?
+
+For building a heap from an array you can choose sift-up or sift-down operation. 
+One leads to far less operations than the other. 
+
+Imagine you have a heap of 16 elements, that means that the height of the heap is 4
+(because hight of binary tree is O(logn)). That means that root node is 4 levels 
+from the bottom nodes, and nodes on the bottom level are 4 levels from the root node. 
+
+However, there are only 1 node that is the deepest - the root node. And
+only two nodes (children of the root node) that are 3 level (out of 4) from the bottom. 
+At the same time, there are at most 8 elements on the bottom. So, what is more optimal - 
+sift down 1 root element through 4 levels or sift up 8 elements through 4 levels? 
+I hope you see that sifting-down takes less operations for building a heap.
+
+sift-up
+![sift-up](sift-up.png)
+sift-down
+![sift-down](sift-down.png)
+
+https://youtu.be/Dvq-YKeuO9Y?t=1182
+
+
+question id: 27f9652e-d241-44f0-8d2c-34e133e424dd
+
 
 
 ### What is time complexity of finding an index of a node by its value in a binary heap?
