@@ -226,8 +226,6 @@ values at each iteration as a list of values
 
 For example:
 ```python
-from itertools import islice
-
 lst = list(range(350))
 chunk_size = 3
 

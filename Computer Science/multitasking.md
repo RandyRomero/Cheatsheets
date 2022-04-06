@@ -1,13 +1,15 @@
 ### What is cooperative multitasking?
 
-Cooperative multitasking is a means of providing the appearance that more than one task
-(executing process) is running at a time by switching tasks rapidly. In cooperative multitasking,
-tasks are designed to give up their control of the CPU to other applications voluntarily (in
-comparison, in preemptive multitasking host itself gets back control from the task).
+It is a way to execute several task at the same time by rapidly switching between them.
+So it appears that they are executed at the same time, but in reality they are being 
+executed by a bit of each in a round-robin manner.
+
+In cooperative multitasking, tasks are designed to give up their control of the CPU 
+to other applications voluntarily (in comparison, in preemptive multitasking host 
+itself gets back control from the task).
 
 As an example of cooperative multitasking we can take Python Asyncio library. Event loop cannot
 get back the control from the Task until the Task releases the control voluntarily.
-
 
 https://www.technipages.com/definition/cooperative-multitasking
 
