@@ -108,7 +108,7 @@ Height of the heap is **logn** where n is the number of elements in the heap.
 question id: 1368a89c-a52e-4947-9ec1-bb216c1dca66
 
 
-### How operations to rearrange a value inside heap are called?
+### How are called operations to rearrange a value inside heap?
 
 answer:
 

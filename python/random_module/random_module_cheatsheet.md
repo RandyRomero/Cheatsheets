@@ -34,3 +34,27 @@ question id: 3efa33f2-6808-4af4-ba6f-85be785769a0
 
 
 question id: 0c4db707-4835-47b7-a950-bd2c227af50a
+
+
+### How does random.shuffle() work and what time complexity does it have?
+
+answer
+
+random.shuffle() traverses given list backwards, for every
+element in the list Python swaps this element with an element
+from a random index. So it takes O(n) as we process all elements and do it just once.
+
+```python
+ def shuffle(self, x):
+        """Shuffle list x in place, and return None."""
+
+        randbelow = self._randbelow  # randbelow is almost the same as randint
+        for i in reversed(range(1, len(x))):
+            # pick an element in x[:i+1] with which to exchange x[i]
+            j = randbelow(i + 1)
+            x[i], x[j] = x[j], x[i]
+```
+
+https://github.com/python/cpython/blob/main/Lib/random.py#L373
+
+question id: a3fa1bee-7820-45b2-a3a8-a81f37df5948

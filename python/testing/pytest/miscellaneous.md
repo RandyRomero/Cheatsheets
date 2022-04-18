@@ -80,3 +80,14 @@ def test_return_some_payload(cat_values):
 ```
 
 question id: should not learn by heart
+
+
+### What is a fixture?
+
+Fixtures are functions that are attached to the tests which run before  and/or after the test function is executed.
+
+Fixture usually creates some resources for the test and
+connections or fake connections to the external resources (db, redis, etc).
+Also they clean up resources after the test ran.
+
+question id: 38c3efe2-fe0b-4c50-b66d-22d47ccf538a

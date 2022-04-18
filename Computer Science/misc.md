@@ -1,10 +1,33 @@
 ### What are green threads?
 
+There are Threads that are kernel-level threads (system-level threads), that are controlled by the host OS.
+OS decides when to switch between them. Because of pre-emptive multitasking OS do not let 
+CPU-heavy long-processes run for very long time. It can suspend the process and give the control
+to another process. If you want your I/O-tasks do not wait forever for CPU-bound tasks, this is
+the way.
+
+There are also green threads or user-level threads. They are threads that are completely 
+control by the app itself (in our )
+
 In essence a green thread looks and feels exactly like a normal thread, except that the threads 
-are scheduled by application code rather than by hardware. But the problem of handling shared 
-memory still exists.
+are scheduled by your app code rather than by OS.
 
 question id: c4bb9063-b0f9-484c-82ae-2008482e433f
+
+
+- in Python threads are kernel-level threads, so operating system decides when to choose between threads of your python app,
+so you don't have control over context-switching or priority of threads
+
+Green threads are user-level threads (an opposite of kernel-level threads), that are controlled by your runtime (Python process in our case)
+With green threads we can control switching between threads and priority of threads. Green threads have less cost then usual threads.
+
+Kernel-level threads (or system threads) use preemtive multitasking (threads are obliged to yield control back when OS demands for it)
+User-level threads use cooperative multitasking (threads give control back voluntarily).
+
+Green threads are much more lightweight than system threads.
+
+Green theads are not affected by GIL, but they still run within one system thread and, therefore, one CPU thread/core. That why they
+still can't run in parallel.
 
 
 ### What is Round Robin?

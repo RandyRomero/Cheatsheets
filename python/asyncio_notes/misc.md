@@ -11,35 +11,36 @@ question id: 4ebef3f6-b318-41b4-bf1c-8d2ead2bf1f9
 
 ### What is an Event Loop?
 
-Event loop is a mechanism which manages concurrent execution of different tasks based on coroutines, 
-callbacks, queues, timers and selector with sockets.
+Python Event Loop is a mechanism that allows cooperative multitasking in Python using coroutines
+
+Event loop is basically a while loop that iterates over a queue of coroutines and also puts callbacks on 
+whatver a coroutine is waiting for, so when callback fires, event loop puts corresponding coroutine back
+to the queue.
 
 question id: d187862c-ad04-4933-8fe8-0999cd69e9db
 
 
-### What are 4 main things that are happening in one iteration of event loop?
+### How does Event loop work in Python?
 
-The event loop:
-- calls all currently ready callbacks (there are special queue for callbacks that are ready to run immediately)
-- polls for I/O (via selector checks out which sockets are ready)
-- if some sockets are ready to read or write - add corresponding handler to the ready queue
-- checks which 'call_later' callbacks are ready to be executed
+Event loop iterates over a queue of Tasks. Every Task contains a Coroutine. 
+Task, when called, executes one iteration of its coroutine, schedules itself back to the end of the queue and suspends.
 
-question id: 79920191-aeb8-4b7f-8720-c9cd7f1f342f
+Between iteration over a queue of Tasks, Event Loop checks on sockets of OS. 
+If a socket is ready to read/write, Event Loop puts a Tasks, that waits on this socket, to the task queue.
+
+question id: 9ba1404a-7469-47da-aed5-0af7a5a08c68
 
 
-### What's a coroutine?
+### What's a coroutine? (5 attributes)
 
 Coroutine is a function that:
-- can pause its execution
-- hold its state
-- return control to the caller
-- resume from the point where it was paused, having all the values stored
-- yield some values on pausing 
+- can pause its execution, saving its state (all variables, arguemnts)
+- return control to the caller while paused
+- resume from the point where it was paused, restoring its state
+- yield values on pausing
 - take some values on resuming
 
 question id: 0f112e66-7773-49e5-956d-0c47b4fc60d3
-
 
 
 ### What's a Task?
@@ -68,7 +69,9 @@ question id: 42888d7d-d854-4e97-8a72-21b8e1637a86
 ### What's a Future?
 
 It's an object, serving as a container for a result we don't have yet, but hopefully we will in the
-future. Like Promise in JavaScript. It has special API (set of methods) which helps producer of the
+future. Like Promise in JavaScript. 
+
+It has special API (set of methods) which helps producer of the
 value and consumer of the value communicate with each other. For example there are Future.done() 
 to check whether the future is done, .cancelled() to check whether the future is cancelled). You 
 can check out its result via .result() method or set the result via .set_result(). You can also
@@ -386,45 +389,6 @@ https://youtu.be/1lJDZx6f6tY?t=1199
 https://stackoverflow.com/questions/37417595/graceful-shutdown-of-asyncio-coroutines
 
 question id: 9bcd39d0-3e18-4116-836f-9d19b18e4fd5
-
-
-### How to gracefully cancel all the Tasks before closing the event loop?
-
-Or how to handle "Task was destroyed but it is pending!"
-
-answer
-
-In layman's terms:
-- catch Exceptions that causes your event loop to stop
-- get all current tasks that is still working
-- cancel them
-- async.gather() them to wait until they are cancelled
-- stop loop manually
-
-```python
-async def main():
-  # whatever
-
-async def shutdown():
-    tasks = asyncio.all_tasks()  # get unfinished tasks
-    [task.cancel for task in tasks] # cancel them
-    await asyncio.gather(*tasks)  # wait until they are cancelled
-
-if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    try:
-        loop.run_until_complete(main())
-    except KeyboardInterrupt:  # or whatever you want to catch
-        pass
-    finally:
-        await shutdown()
-    loop.close()
-```
-
-https://youtu.be/1lJDZx6f6tY?t=1199
-https://stackoverflow.com/questions/37417595/graceful-shutdown-of-asyncio-coroutines
-
-question id: 9438fb44-93f5-41dc-9165-a27faaadc013
 
 
 ### How to limit a number of coroutines running simultaneously?

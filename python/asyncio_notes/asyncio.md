@@ -113,3 +113,67 @@ asyncio.create_task() instead.
 https://github.com/python/asyncio/issues/477#issuecomment-268709555
 
 question id: 09ebbbfb-2186-46a2-b6f3-34cfecc7a31f
+
+
+### How to run blocking synchronous function from asyncronous code?
+
+Use loop.run_in_executor() to fire up your blocking call in a new thread
+
+Example
+```python
+async def sleep_test():
+    loop = asyncio.get_event_loop()
+    print('going to sleep')
+    await loop.run_in_executor(None, time.sleep, 5)
+    #time.sleep(5)
+    print('waking up')
+
+async def parallel():
+    # run two sleep_tests in parallel and wait until both finish
+    await asyncio.gather(sleep_test(), sleep_test())
+
+asyncio.run(parallel())
+```
+
+Running this code shows that both instances of the coroutine sleep in parallel. 
+If we used time.sleep() directly, they would sleep in series because 
+the sleep would block the event loop.
+
+This example is of course silly because there is asyncio.sleep() 
+that suspends a coroutine without spending a slot in a thread pool, 
+but it shows the basic idea. Realistic use cases for run_in_executor include:
+
+integrating CPU-bound code, such as numpy or pandas calculations, into an asyncio program
+invoking legacy code that hasn't yet been ported to asyncio
+blocking calls where non-blocking APIs are simply unavailable - e.g. proprietary 
+database drivers, or blocking OS-level calls such as those for file system access
+
+https://stackoverflow.com/questions/55027940/is-run-in-executor-optimized-for-running-in-a-loop-with-coroutines
+https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_in_executor
+
+question id:
+
+
+### How to run CPU-heavy synchronous code from asynchronous code?
+
+
+Use `await loop.run_in_executor(your_function)` with ProcessPoolExecutor from concurrent.futures.
+It will start a new process and will execute your function in it. Default executor in asyncio
+is ThreadPoolExecutor, so you have to change it first like on the screenshot.
+
+![asyncio_process_pool_executor.png](asyncio_process_pool_executor.png)
+
+https://youtu.be/VWoyeq_ujJ4?t=1043
+
+question id: 
+
+
+### How to run asyncronous function from syncrhonous code?
+
+answer:
+
+```python
+ asyncio.run(your_function(your_args)))
+ ```
+
+ question id: 
