@@ -172,7 +172,7 @@ docker/rabbitmq/graphql/nginx/redis:
 - https://www.tutorialworks.com/difference-docker-containerd-runc-crio-oci/
 - https://youtu.be/EC0CSevbt9k a best-practices process for Docker packaging
 - what is replica and what are type of replicas?
-
+- https://habr.com/ru/company/vk/blog/654471/ graceful shutdown of pods
 
 
 

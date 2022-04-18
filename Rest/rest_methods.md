@@ -90,3 +90,13 @@ x=5 is idempotent because the state of x will always be 5 no matter how many tim
 vs x++ is not idempotent because every time the state of x will be different
 
 question id: 7aa6af9a-7c31-4ece-91f7-868a0ef65868
+
+
+### What's HEAD method for?
+
+The HEAD method asks for a response identical to that of a GET request, 
+but withou the response body. This is useful for retrieving 
+meta-information written in response headers, without having 
+to transport the entire content.
+
+question id: 6899b9a7-e435-44ff-99b7-ddc44585ee79
