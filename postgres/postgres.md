@@ -2761,7 +2761,7 @@ question id: 4c4a72a8-1ec1-401c-bc4b-23f20d2f3b9d
 You have a table like this
 
 ```
-| Item | Price | Discount |
+| item | price | discount |
 |------|-------|----------|
 | A    | 100   | 20       |
 | B    | 300   | null     |
