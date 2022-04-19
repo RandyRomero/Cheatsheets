@@ -175,6 +175,9 @@ For example, you have the following slice
 fruitSlice := []string{"Apple", "Orange", "Slice", "Cherry"}
 ```
 
+expected output:
+[Orange Slice Cherry]
+
 answer
 
 ```go
@@ -184,11 +187,13 @@ import "fmt"
 
 func main() {
 	fruitSlice := []string{"Apple", "Orange", "Slice", "Cherry"}
-	fmt.Println(fruitSlice[1:4])) // [the end border is exclusive]
-}
+	fmt.Println(fruitSlice[1:]))
 ```
 
 question id: 085fc18d-c47f-4aa1-8922-90307fec1bc8
+
+
+
 
 
 ### What is a general syntax of if else statements in Go?

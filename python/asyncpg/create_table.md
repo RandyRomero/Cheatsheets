@@ -14,12 +14,12 @@ async def get_connection():
 
 async def main():
     conn = await get_connection()
-    await create_table(conn)
+    await create_database(conn)
 
 
-async def create_table(conn):
+async def create_database(conn):
     sql = '''
-    CREATE TABLE some sql code whatever
+    CREATE DATABASE whatever
     '''
 
     try:

@@ -81,10 +81,35 @@ question id: 373fb07a-9f59-428c-9a2e-76b829fc6d0e
 
 answer:
 
-For example, your function 'k_way_merge()' was called with 10 sorted arrays as inputs. However, you can merge only
-two arrays. So what do you do? Inside 'k_way_merge()' your call 'k_way_merge()' itself twice, but you path two both
-of the only half of the arrays each. Then again. Until there is only two array, which two-way merge can handle.
+We know how to merge two sorted arrays. Based on this, how to merge k sorted arrays most efficiently?
 
+So, you can merge only two arrays, but you have, for example, 6 of them. The solution is simple:
+you have to merge every two of them with each other - then you will be left with 3 sorted arrays;
+then you sort 1 and 2 of 3 arrays - you will be left with 2 arrays. That's all - you can merge sort two arrays.
+
+But how to implement this in code? You need a function, let's call it k_way_merge(), that would take
+k sorted arrays. It would call two_way_merge() with two arguments - two sorted arrays. Instead of two actual
+arrays we will pass k_way_merge() itself twice with the first and with the second half of the arrays.
+
+Check this out in Python:
+```python
+import typing as tp
+
+VALUE = tp.TypeVar("VALUE")
+
+def k_way_merge(*iterables: tp.Iterable[VALUE]) -> tp.Iterator[VALUE]:
+    """Merges any number of given iterables
+
+    time complexity: O(nlogk)
+    space complexity: O(1)
+    """
+
+    if len(iterables) == 1:
+        yield from iterables[0]
+    else:
+        mid = len(iterables) // 2
+        yield from two_way_merge(k_way_merge(*iterables[:mid]), k_way_merge(*iterables[mid:]))
+```
 ![iterative k-way merge](iterative_k_way_merge.png)
 
 question id: c909c585-2091-41bf-a091-e563811ecb08
