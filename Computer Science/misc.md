@@ -74,3 +74,32 @@ because it takes time for updates to reach replicas across a database cluster.
 https://www.scylladb.com/glossary/eventual-consistency/
 
 question id: 784565e7-f73e-414c-b0f6-d0f8752610d5
+
+
+### What does imperative in terms of programming lanugages mean?
+
+An imperative language tells the computer to perform certain operations in a certain
+order. You can imagine stepping through the code line by line, evaluating conditions,
+updating variables, and deciding whether to go around the loop one more time.
+
+question id: 69863856-1533-4bb3-8d99-45c8cf611b58
+
+
+### What does declaritive in terms of programming lanugages mean?
+
+In a declarative query language, like SQL or relational algebra, you just specify the
+pattern of the data you want — what conditions the results must meet, and how you
+want the data to be transformed (e.g., sorted, grouped, and aggregated) — but not how
+to achieve that goal. It is up to the database system’s query optimizer to decide which
+indexes and which join methods to use, and in which order to execute various parts
+of the query.
+
+question id: f8c3a8fb-cb5f-4b9f-9ea3-42a333789cf5
+
+
+### What is MapReduce?
+
+MapReduce is a programming model for processing large amounts of data in bulk
+across many machines, popularized by Google 
+
+question id: 906e2bb4-54a5-4b18-8215-b054c3a1181b

@@ -12,6 +12,14 @@ communicate with a database
 
 question id: acd60e56-34b5-467d-bba2-615acc71a050
 
+
+### How is a software that you use to interact and manage a relational database called?
+
+Relational database management systems (RDBMSes)
+
+question id: 
+
+
 ### What's JOIN?
 An SQL join clause combines columns from one or more tables in a relational database. 
 JOIN combines columns from one (self-join) or more tables by using values common to each and 

@@ -1338,7 +1338,7 @@ LENGTH(LEFT(col_name, N + 1)) > N
 question in: a0d686d1-e090-4d41-8394-4dff793eeb22
 
 
-### Return N characters from the left side of the string
+### Return first N characters of the string
 
 ```sql
 LEFT(col_name, N)
