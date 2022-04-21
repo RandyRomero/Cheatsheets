@@ -151,7 +151,7 @@ database drivers, or blocking OS-level calls such as those for file system acces
 https://stackoverflow.com/questions/55027940/is-run-in-executor-optimized-for-running-in-a-loop-with-coroutines
 https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_in_executor
 
-question id:
+question id: 33c01ce0-6f45-468a-bc69-b819de80608b
 
 
 ### How to run CPU-heavy synchronous code from asynchronous code?
@@ -165,7 +165,7 @@ is ThreadPoolExecutor, so you have to change it first like on the screenshot.
 
 https://youtu.be/VWoyeq_ujJ4?t=1043
 
-question id: 
+question id: f4d7e789-56bd-46fb-9a77-c6d89d97c8d6
 
 
 ### How to run asyncronous function from syncrhonous code?
@@ -173,7 +173,7 @@ question id:
 answer:
 
 ```python
- asyncio.run(your_function(your_args)))
- ```
+asyncio.run(your_function(your_args)))
+```
 
- question id: 
+question id: 22866d5b-4014-4b21-b287-c3f4d9f5fe9d

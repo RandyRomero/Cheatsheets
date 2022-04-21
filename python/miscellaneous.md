@@ -7,27 +7,6 @@ obj_attrs = [attr for attr in dir(your_obj) if not attr.startswith('_')]
 question_id: 385f1c63-c2d2-46ba-a3bc-2e1a997653bf
 
 
-### What's GIL?
-
-GIL stands for global interpreter lock. It allows only one thread (within a process) to be executed at a time. 
-Thread is a separate flow of instructions. 
-
-The impact of the GIL isn’t visible to developers who execute single-threaded programs, but it can be a performance 
-bottleneck in CPU-bound and multi-threaded code.
-
-question id: 84ff2d94-d67e-4aab-98e7-548d0d3df3ba
-
-
-### What Problem Did the GIL Solve for Python?
-
-Python has a reference count system for every object as a tool to release acquired memory. So every object has
-a count how many variables points to it. In order to avoid race conditions, when two threads are changing the
-reference count of the same object, only one thread can be executed at a time. Otherwise there can be memory 
-leakages and other nasty bugs. 
-
-question id: 6e6efc46-800a-4262-9f83-483a6a682efe
-
-
 ### What's a thread?
 
 A thread in Python is a separate flow of instructions.
@@ -35,7 +14,6 @@ A thread in Python is a separate flow of instructions.
 Only one Python thread (within one Python process) can run at the same time. You can have a few threads, but they 
 work in turn, no matter how many cores you CPU has.
 
-### Why do we need threads in Python?
 
 ### What the difference between multithreading and async programming in Python?
 
