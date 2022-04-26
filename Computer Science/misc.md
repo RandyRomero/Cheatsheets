@@ -98,3 +98,10 @@ MapReduce is a programming model for processing large amounts of data in bulk
 across many machines, popularized by Google 
 
 question id: 906e2bb4-54a5-4b18-8215-b054c3a1181b
+
+
+### What does it mean if an object is immutable?
+
+An immutable object is an object whose state cannot be modified after it is created.
+
+question id: f64df236-3ce5-42e1-90d7-715e7948c8f4

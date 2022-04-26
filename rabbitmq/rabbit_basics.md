@@ -269,7 +269,7 @@ Or should it get discarded. The rules for that are defined by the exchange type.
 question id: 4bdc6c1d-ddbe-43c6-a92f-9b8b56117da5
 
 
-### What are exchange types?
+### Name all possible types of an exchange
 
 - Direct exchange
 - Fanout exchange

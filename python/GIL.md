@@ -35,6 +35,9 @@ question id: 0e7a7064-2f76-44bb-85c8-36016252e36a
 
 ### How is thread switching implemented in Python?
 
+https://archive.org/details/pyvideo_580___changes-to-the-gil-in-python-3
+https://www.dabeaz.com/python/NewGIL.pdf
+
 I would like to start that the current implementation dates back to Python 3.2
 and was suggested by by Antoine Pitrou because the previous GIL has issues 
 on multicore machines (you can learn about it in David Beazley talk at the time.)
