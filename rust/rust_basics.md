@@ -436,7 +436,7 @@ fn main() {
 question id: 7168920a-6888-4faf-9d71-86a2c5e9f1c1
 
 
-### Create a tuple with these elements with types and print out just one value from it
+### Create a tuple with these elements - 3, true, "Whatever" - with types and print out just one value from it
 
 answer
 ```rust

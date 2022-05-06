@@ -135,7 +135,7 @@ question id: c0ea1851-1feb-493f-b48b-91d7ac65672b
 question id: 4f615d79-d679-460e-8e77-73d99dc11b93
 
 
-### How relational, document and graph database related to each other?
+### When it is the best to use relational, document and graph database?
 
 Document databases are convenient for tree-like (hierarchical) data, but 
 it is not as sutables for many-to-one and many-to-many relations.

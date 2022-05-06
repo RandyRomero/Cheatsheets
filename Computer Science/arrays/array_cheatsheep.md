@@ -2,7 +2,7 @@ https://www.techinterviewhandbook.org/algorithms/array/
 
 ### What is an array?
 
-Array is a data structure that holds values of the same type at contiguous memory locations.
+Array is a linear data structure that holds values of the same type at contiguous memory locations.
 Each element also has its own index, which is used to access the element.
 
 question id: b875f917-ff48-4853-8939-e5fe90c008b5
@@ -108,8 +108,8 @@ Sliding Window Technique is a computational technique which aims to reduce
 the use of nested loop and replace it with a single loop, thereby 
 reducing the time complexity.
 
-(I guess) it's a technique used for strings/arrays that is dedicated to get rid reiteratin over
-the same subset again and instead just take into consideration that we remove one element on the left
-and added one on the right.
+In this technique two pointers usually move in the same direction will 
+never overtake each other. This ensures that each value is only visited 
+at most twice and the time complexity is still O(n).
 
-
+question id: 

@@ -252,3 +252,66 @@ Therefore,
 ```
 
 question id: f0a1a6b7-2cf1-48c7-9252-9c9c856cb35d
+
+
+### How to count a number of occurences in a string or a list?
+
+For example, you have a string 'mississippi' and you want to 
+count how many times each character occurs in this string.
+How would you do that? Show two ways.
+
+answer
+
+With a dict and for loop:
+
+```python
+counter = {}
+
+for character in 'mississippi':
+    if character not in counter:
+        counter[character] = 0
+    counter[character] += 1
+
+print(counter)  # {'m': 1, 'i': 4, 's': 4, 'p': 2}
+```
+
+with collections.Counter
+```python
+from collections import Counter
+
+counter = Counter('mississippi')
+
+print(counter)  # Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})
+```
+
+What is the difference? collections.Counter has some useful methods
+
+question id: 162dd5bc-3825-4a31-8c5c-9c10211f7b32
+
+
+### How to rewrite this code to decrease the number of lines of a loop twice?
+
+
+```python
+counter = {}
+
+for character in 'mississippi':
+    if character not in counter:
+        counter[character] = 0
+    counter[character] += 1
+
+print(counter)  # {'m': 1, 'i': 4, 's': 4, 'p': 2}
+```
+
+answer
+
+```python
+counter = {}
+
+for character in 'mississippi':
+    counter[character] = counter.get(character, 0) + 1
+
+print(counter)  # {'m': 1, 'i': 4, 's': 4, 'p': 2}
+```
+
+question_id: e4c31238-0cd2-4432-bb01-ecb81efb581c
