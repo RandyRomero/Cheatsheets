@@ -26,8 +26,8 @@ question id: cb09e260-a0d5-4753-bbe2-6a0519f0addc
 
 It's O(n + k). k is the length of auxiliary array that we have to create and it is equal to the 
 difference between the smallest and the biggest value of the array. For example, for array
-like [0, 100] the n is only 2, but k is 100, which gives us 102 in total which is quite too much
-for array of length 2.
+like [0, 100] the n is only 2, but k is 100, thereby the space complexity is 102 in total which is 
+too much for array of length 2.
 
 question id: b703c37a-253c-4161-afab-2f7d84d7d1cc
 
