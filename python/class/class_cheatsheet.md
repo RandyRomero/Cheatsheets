@@ -24,3 +24,27 @@ by the `__new__()` method.
 
 question id: 88d8bb4e-ec8d-4d1c-8e6d-09acc56bf228
 
+
+### Write an example of an abstract class with some abstract methods
+
+answer
+
+```python
+from abc import ABC, abstractmethod
+ 
+class Bird(ABC):
+ 
+    @abstractmethod
+    def fly(self):
+        pass
+ 
+class Hawk(Bird):
+ 
+    def fly(self):  # overrides base class methods
+        print("implements details of flying")
+
+    def kill(self):
+        print("killing animals to eat them")
+```
+
+question id: 652408d8-5afc-4223-9fac-060c7cbcec89

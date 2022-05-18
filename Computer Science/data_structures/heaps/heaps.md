@@ -172,7 +172,7 @@ to apply it to the very bottom of the heap because nodes there do not have child
 of complete binary tree contains half of the nodes of the tree),
 so it seems like building a heap takes (nlog(n/2)) which is the same as (nlog(n)).
 
-However, the real time complexity of buidling a heap is O(n). Why not log(n) as sift-down is log(n)?
+However, the real time complexity of buidling a heap is O(n). Why not O(n*log(n)) as sift-down is log(n)?
 Because in reality elements don't have to go all the way down from the root node to the bottom level.
 Only to sift down the root node is log(n). To sift down the children of the root node would be at least one
 operation less for each as there are less levels to travers. For example, the level next to the 

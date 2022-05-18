@@ -22,7 +22,7 @@ maintains the position of two equals elements relative to one another.
 question id: e5ff9f4e-de23-4e1d-b91c-8501c771e37b
 
 
-### Does stability of a sortding algorithm matter?
+### Does stability of a sorting algorithm matter?
 
 answer:
 
