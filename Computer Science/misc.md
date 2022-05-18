@@ -105,3 +105,16 @@ question id: 906e2bb4-54a5-4b18-8215-b054c3a1181b
 An immutable object is an object whose state cannot be modified after it is created.
 
 question id: f64df236-3ce5-42e1-90d7-715e7948c8f4
+
+
+### What is an interface?
+
+answer:
+
+An interface is a description of behaviors that an object can do. 
+For example, when you press the power button on the TV remote control, 
+it turns the TV on, and you don’t need to care how.
+
+In object-oriented programming, an interface is a set of methods an object must-have.
+
+question id: 3cec5440-7a33-488f-abed-c5069c2735ad

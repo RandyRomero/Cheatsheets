@@ -37,9 +37,24 @@ async def main():
         resp = await session.get(url=url, headers=headers)
         print(resp.status)
 
-        f = await aiofiles.open("file path and name on disk", mode='wb')
-        await f.write(await resp.read())
-        await f.close()
+        # your code here
+```
+
+answer:
+
+```python
+import asyncio
+import aiohttp
+
+import aiofiles
+
+async def main():
+    async with aiohttp.ClientSession() as session:
+        resp = await session.get(url=url, headers=headers)
+        print(resp.status)
+
+        async with aiofiles.open("file path and name on disk", mode='wb') as outfile:
+            await outfile.write(await resp.read())
 ```
 
 question id: 4c8e87da-a751-4c8b-ab39-a4fcd7d6c33f

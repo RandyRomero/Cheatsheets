@@ -5,9 +5,9 @@
 + Best time to buy and sell stock
 + Best time to buy and sell stock II
 + Two Sum
++ Palindromic Substrings
 
 
-- Palindromic Substrings
 - Merge Sorted Array
 - Daily Temperatures
 - Number of Visible People in a Queue
@@ -16,7 +16,6 @@
 - Product of Array Except Self
 - First Missing Positive
 - Contains Duplicate
-- Product of Array Except Self
 - Maximum Subarray
 - Maximum Product Subarray
 - Search in Rotated Sorted Array

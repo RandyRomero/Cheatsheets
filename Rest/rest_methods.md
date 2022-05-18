@@ -8,9 +8,9 @@ question id: 32468286-2628-4532-baeb-3187add0a248
 
 ### What are common methods that are used in REST?
 
-GET, POST, PUT, PATCH, DELETE
+HEAD, GET, POST, PUT, PATCH, DELETE
 
-These correspond to create, read, update, and delete (or CRUD) operations, respectively.
+These correspond to create, read, update, and delete (o2r CRUD) operations, respectively.
 
 question id: ced22b5c-1dfb-4714-b66b-1abaaf757129
 
