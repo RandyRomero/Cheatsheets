@@ -6,9 +6,8 @@
 + Best time to buy and sell stock II
 + Two Sum
 + Palindromic Substrings
++ Merge Sorted Array
 
-
-- Merge Sorted Array
 - Daily Temperatures
 - Number of Visible People in a Queue
 - Merge Intervals

@@ -31,6 +31,7 @@ question id: 62e6a61f-e1eb-4ba5-8e18-c0fb2c7feef5
 
 - when you data has simple tree-like structure and you query the whole document rather than it pieces most of the time
 - when you don't need to or can't control the structure of incoming data
+- when your more often query the whole entry with the whole tree of data rather than small pieces of information
 
 question id: d49c1181-645c-4df0-87a6-9461dca92787
 
