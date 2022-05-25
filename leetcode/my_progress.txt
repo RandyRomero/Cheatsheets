@@ -7,8 +7,8 @@
 + Two Sum
 + Palindromic Substrings
 + Merge Sorted Array
++ Daily Temperatures
 
-- Daily Temperatures
 - Number of Visible People in a Queue
 - Merge Intervals
 - Non-overlapping Intervals
