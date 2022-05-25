@@ -46,7 +46,7 @@ question id: ed15a167-bd48-44ca-86cc-0cefff28d217
 
 ### What is load factor regarding hash maps?
 
-Ratio between occupied slots in array and free slots. 
+Ratio between occupied slots in array and the array length. 
 For example, hash map with this array - []["some_value"][][] - has a load factor of 1/4.
 When load factor of a hash is 1 or more, there is no way you can avoid collisions and have good perfomance for every element.
 Once your load factor is greater than .07, it’s time to resize your hash table.
