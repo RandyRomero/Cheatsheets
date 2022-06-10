@@ -84,7 +84,7 @@ question id: 501b82f0-26ee-4815-adc5-88cc49fc09c4
 
 
 
-### What data structure is Document model not so suitable for?
+### What kind of relations is Document model not so suitable for?
 
 For data structrue that has many-to-one and many-to-many relationships
 
