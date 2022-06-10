@@ -122,7 +122,7 @@ class Penguin(Bird):
         print('swimming')
 ```
 
-What's wrong here? Right. A penguin cannot swim. So if we substitue Bird class with Penguin class,
+What's wrong here? Right. A penguin cannot fly. So if we substitue Bird class with Penguin class,
 it can cause an error. So we need to fix it.
 
 ```python

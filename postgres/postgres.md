@@ -2491,7 +2491,7 @@ DROP COLUMN column_name;
 
 question id: 2ca85e7a-f090-4f49-a4f0-d221a87dded1
 
-### Set default value for a column
+### Set default value for an existinng column
 
 ```sql
 ALTER TABLE table_name

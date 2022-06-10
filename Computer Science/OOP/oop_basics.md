@@ -91,7 +91,10 @@ question id: 019f1fdc-684e-416e-8d24-6e4fe14252fc
 
 ### What is Polimorphism?
 
-It's a OOP principle. 
+It's one of OOP principles.
+Poliphormism lest us use objects of different types in a completely same way
+if these objects implepent the same interface.
+
 For example, there are different data types in Python that can be iterated over. 
 It can be a List, or a FileBuffer. These are completely different data types.
 

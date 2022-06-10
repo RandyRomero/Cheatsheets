@@ -445,15 +445,12 @@ So you can use this function like this:
 
 ```python
 square = power_factory(2)
-square(10)
-100
-power_factory(3)
-cube(10)
-1000
-cube(5)
-125
-square(15)
-225
+assert square(10) == 100
+assert square(15) == 225
+
+cube = power_factory(3)
+assert cube(10) == 1000
+assert cube(5) == 125
 ```
 
 Answer: we need to use a closure
@@ -463,7 +460,7 @@ def power_function(exp):
     def power(base):
         return base ** exp
     return power
-``` 
+```
 
 question id: d754b730-2fd1-4c4d-8aed-5516783fb315
 
@@ -515,26 +512,47 @@ current_mean(13)
 12.2
 ```
 
+Template
+```python
+test_cases = ((10, 10), (15, 12.5), (12, 12.333333333333334), (11, 12), (13, 12.2))
+
+# your code here
+
+if __name__ == '__main__':
+    for case in test_cases:
+        assert current_mean(case[0]) == case[1], case
+    print("succes!")
+```
+
 answer
 
 You need to use a closure
 
 ```python
-from typing import Callable
+test_cases = ((10, 10), (15, 12.5), (12, 12.333333333333334), (11, 12), (13, 12.2))
 
-def mean() -> Callable:
-    total = 0
-    length = 0
-    def _mean(number: int) -> float:
-        nonlocal total, length
-        total += number
-        length += 1
-        return total / length
-    return _mean
 
-current_mean = mean()
-current_mean(10) # 10.0
-current_mean(15) # 12.5
+def mean_factory():
+    """Returns a closure that takes an int and returns average of all taken ints."""
+    counter = 0
+    total_sum = 0
+
+    def wrapper(num: int):
+        """Takes an int and returns average of all taken ints."""
+        nonlocal total_sum, counter
+        total_sum += num
+        counter += 1
+        return total_sum / counter
+
+    return wrapper
+
+
+current_mean = mean_factory()
+
+if __name__ == "__main__":
+    for case in test_cases:
+        assert current_mean(case[0]) == case[1], case
+    print("succes!")
 ```
 
 question id: 5970daa7-97c3-40c9-8d0a-96eccbfed805
@@ -835,7 +853,7 @@ You’ll get the same dictionary that you would get if you were to call `globals
 
 question id: e54b6ce1-3fdb-4735-93af-7d180bc806c8
 
-### What's `var()` for?
+### What's `vars()` for?
 
 `vars()` is a Python built-in function that returns the `.__dict__` attribute of a module, class, instance, or any other 
 object which has a dictionary attribute.
