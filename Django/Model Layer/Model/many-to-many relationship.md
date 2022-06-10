@@ -145,7 +145,7 @@ article.publications.all()
 question id: e7095d9a-9261-4094-ae0a-acffac8ea8c3
 
 
-### Get all articles but related to a specific publication
+### Get all articles except related to a specific publication
 
 Article and Publications are related via m2m relationship
 (https://docs.djangoproject.com/en/3.1/topics/db/examples/many_to_many/#many-to-many-relationships)

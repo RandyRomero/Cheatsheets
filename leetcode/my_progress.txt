@@ -10,6 +10,7 @@
 + Daily Temperatures
 + Number of Visible People in a Queue
 
+- Valid Parentheses https://leetcode.com/problems/valid-parentheses/
 - Merge Intervals
 - Non-overlapping Intervals
 - Product of Array Except Self
