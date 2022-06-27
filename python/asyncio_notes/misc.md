@@ -300,7 +300,8 @@ question id: 07614471-80f0-4d34-bfcf-a16d6888eeac
 
 answer
 
-Use asyncio.as_completed() as shown in this example below:
+Use **asyncio.as_completed()** as shown in this example below:
+
 ```python
 import asyncio
 from random import randrange
@@ -326,8 +327,14 @@ async def main():
 
 asyncio.run(main())
 ```
+Code from https://www.integralist.co.uk/posts/python-asyncio/#as_completed
 
-https://www.integralist.co.uk/posts/python-asyncio/#as_completed
+
+asyncio.as_completed() takes an iterable of awaitables and returns an iterator 
+that yields asyncio.Futures in the order the awaitables are done.
+There’s no way to find out which awaitable you’re awaiting though.
+(c) https://hynek.me/articles/waiting-in-asyncio/
+
 
 question id: 6fc10b44-8f2b-4d9a-8760-fe0c0e9c727f
 

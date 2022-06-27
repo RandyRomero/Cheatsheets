@@ -31,7 +31,7 @@ question id: 1e2417f2-f035-4038-8041-d231d23e8026
 
 ### How to get a number of occurences of a substring in a given string?
 
-For example, what number of "e" in this exact sentece?
+For example, what number of "e" in this exact sentence?
 
 answer
 ```python

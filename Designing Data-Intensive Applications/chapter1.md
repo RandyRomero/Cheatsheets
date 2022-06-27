@@ -215,7 +215,7 @@ question id: 3d9d5200-4fec-4913-884f-84cc411276ea
 question id: 574b6fda-5d90-423a-895b-ad21c0b0360a
 
 
-### Why people don't like to work with legacy systems?
+### Why don't people like to work with legacy systems?
 
 - it involves fixing other people’s mistakes
 - working with platforms that are now outdated
