@@ -120,7 +120,7 @@ https://docs.djangoproject.com/en/3.1/topics/db/queries/#field-lookups
 question id: c4831a91-6e08-4672-aefe-66aecf99e7eb
 
 
-### Having `Blog` model with `name` field find article(s) with name that matches "Beatles Blog", "beatles blog", or even "BeAtlES blOG"
+### Having `Blog` model with `name` field find article(s) with name that exactly matches "Beatles Blog", "beatles blog", or even "BeAtlES blOG" regardless of its case
 
 ```python
 Blog.objects.filter(name__iexact="beatles blog").all()

@@ -52,10 +52,14 @@ question id: 277306d6-0600-4b50-ac31-4311612ddfce
 
 ### What is Encapsulation?
 
-Encapsulation is defined as the wrapping up of data under a single unit.
-
 It is one of OOP principles that states that all important information is 
-contained inside an object and only select information is exposed.
+contained inside an object and only selected information is exposed.
+
+Encapsulation is defined as the wrapping up of data under a single unit.
+Or biding data to a single unit. Like, you create a class named Cat, and
+bind all related to cats things, attributes and methods, to this class.
+
+
 The implementation and state of each object are privately held 
 inside a defined class. Other objects do not have access to this class 
 or the authority to make changes. They are only able to call 
@@ -64,14 +68,18 @@ a list of public functions or methods.
 question id: 7ff93118-94f6-4a9a-94af-143ef3f33a93
 
 
-### What is Abstarction (in OOP)?
+### What is Abstraction (in OOP)?
 
 Abstraction is the concept of hiding a complex logic within a class,
 and only provide to a user necessary methods. 
 
-Like a coffee machine hides logic of making a coffee and provides as a 
-button "make a coffee". We don't need to know what's going inside the machine,
-all we need to know is to push the button.
+Abstraction allows you to focus on what the item does instead of how it does.
+
+Good example of an abstraction is a HashMap (or a Dictionary) in Python.
+Most of us don't even have to know that a HashMap uses an array or a hash function
+to store and retrive the data. We just you get/set methods and happily live without
+thinking of how a dictionary handle our data.
+
 
 The same with classes in OOP. Lke in Djano ORM, where class Model encapsulates
 a lot of logic of mapping a object to a model and translating our code

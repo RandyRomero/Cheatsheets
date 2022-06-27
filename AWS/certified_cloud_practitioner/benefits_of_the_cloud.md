@@ -1,10 +1,10 @@
-### What are benefits of using the cloud? (9)
+### What are benefits of using the cloud? (8)
 
 - agility (launch resources within a click instead of waiting days or weeks)
 - always-up-to-date (all software of the cloud is always up to date)
 - don't need to manage your own datacenters
 - economy of scale (share costs with other users)
-- elasticity (automatic scaling based on demand)
+- elasticity/scalability (automatic scaling based on demand / increase or decrease resources and services on demand)
 - go global in minutes (deploy your app instantly in multiple regions)
 - reliability (instrument for data backup etc)
 - scalability (increase or decrease resources and services on demand)
