@@ -23,6 +23,28 @@ git stash pop --index 0
 question id: d126492e-21e6-44a7-a8e0-5c26ef08b6b1
 
 
+### How to apply your stash without deleting it?
+
+answer:
+
+git stash apply
+or
+git stash apply --index 0  # by name
+
+question id: 2812e8c5-a3cf-45d2-b392-addcaf09ccf9
+
+
+### How to abort applying of a stash when it caused conflicts?
+
+answer:
+
+git reset --merge
+
+then delete untracked files
+
+question id: f103f098-d77b-4373-ac17-8fbf8af976de
+
+
 ### Clear all your stashes
 
 ```bash
@@ -111,9 +133,26 @@ git reset filename
 question id: d3ee8353-4284-43ae-8e73-5d621b8ab8c1
 
 
-### How to see what was changed in commit?
+### How to see what was changed in a commit?
 
 Last commit: git show
 Several commits: git show -3 (or another number of commits)
 
 question id: 39b2f12c-ed46-40d1-97ca-9715d1fa94be
+
+
+### How to rename a branch you are in?
+
+answer:
+
+git branch -m new-branch-name
+
+question id: a34bef12-9205-4547-b004-1137466ad83f
+
+
+### How to create a new branch from a specific commit?
+
+answer
+git checkout -b new-branch-name <commit-sha>
+
+question id: 096eaf66-b71e-40d1-93cd-734f47fdee56
