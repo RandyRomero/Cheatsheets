@@ -9,7 +9,7 @@ answer
 question id: 7f64e8ac-01e4-4295-814e-b22b7a4c2c18
 
 
-### How to achieve the 2st Normal Form?
+### How to achieve the 2nd Normal Form?
 
 1. Table should be in the 1st Normal Form
 2. No partial dependencies

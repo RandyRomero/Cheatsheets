@@ -15,7 +15,7 @@ question id: 04b1665d-b794-4ddb-ab65-7d2f8a7d35e6
 
 
 
-### What the difference in '==' and 'is' operators in Python?
+### What is the difference in '==' and 'is' operators in Python?
 
 answer
 

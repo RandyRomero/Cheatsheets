@@ -3,7 +3,7 @@
 answer:
 
 It is the practise of using a network of remote servers hosted on the internet to store,
-manage, and process data, rather thean a local server or a personal computer
+manage, and process data, rather than a local server or a personal computer
 
 question id: 0c91f625-50fe-4ff8-9909-48edcb82931f
 

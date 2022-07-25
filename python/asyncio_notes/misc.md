@@ -398,6 +398,45 @@ https://stackoverflow.com/questions/37417595/graceful-shutdown-of-asyncio-corout
 question id: 9bcd39d0-3e18-4116-836f-9d19b18e4fd5
 
 
+
+### How to gracefully cancel all the Tasks before closing the event loop?
+
+answer:
+
+In layman's terms:
+- catch Exceptions that causes your event loop to stop
+- get all current tasks that is still working
+- cancel them
+- async.gather() them to wait until they are cancelled
+- stop loop manually
+
+```python
+async def main():
+  # whatever
+
+async def shutdown():
+    tasks = asyncio.all_tasks()  # get unfinished tasks
+    [task.cancel for task in tasks] # cancel them
+    await asyncio.gather(*tasks)  # wait until they are cancelled
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(main())
+    except KeyboardInterrupt:  # or whatever you want to catch
+        pass
+    finally:
+        await shutdown()
+    loop.close()
+```
+
+https://youtu.be/1lJDZx6f6tY?t=1199
+https://stackoverflow.com/questions/37417595/graceful-shutdown-of-asyncio-coroutines
+
+question id: 9438fb44-93f5-41dc-9165-a27faaadc013
+
+
+
 ### How to limit a number of coroutines running simultaneously?
 
 Use a scheduler from a library called aiojobs

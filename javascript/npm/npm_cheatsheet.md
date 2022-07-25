@@ -1,7 +1,7 @@
 ### How to remove a package? 
 
 answer:
-`npm unistall --save your_package_name`
+`npm uninstall --save your_package_name`
 
 --save flag is needed to remove the package also from package.json & package-lock.json
 

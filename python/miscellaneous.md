@@ -77,7 +77,7 @@ Strings are sorted alphabetically, and numbers are sorted numerically.
 question id: a765ad69-dfd8-42f4-9834-baff679d3d96
 
 
-### What the default order of sorting in `sort()` and `sorted()`? How to change it?
+### What is the default order of sorting in `sort()` and `sorted()`? How to change it?
 
 Default sorting order for them is ascending. Both `sort()` and `sorted()` take an argument `reverse` which is False by 
 default. If you pass True, the iterable will be sorted in a descending order.
