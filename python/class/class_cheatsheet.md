@@ -48,3 +48,92 @@ class Hawk(Bird):
 ```
 
 question id: 652408d8-5afc-4223-9fac-060c7cbcec89
+
+
+### What would be the output?
+
+```python
+class A:
+    a = "foo"
+
+x = A()
+y = A()
+
+x.a  # ?
+y.a  # ?
+A.a  # ?
+```
+
+answer:
+
+```python
+x.a  # foo
+y.a  # foo
+A.a  # foo
+```
+
+https://python-course.eu/oop/class-instance-attributes.php
+
+question id: 78a33f0c-7e01-4588-9119-37b47455ca52
+
+
+### What would be the output?
+
+
+```python
+class A:
+    a = "foo"
+
+x = A()
+y = A()
+
+x.a  = "bar"
+
+x.a  # ?
+y.a  # ?
+A.a  # ?
+```
+
+answer:
+
+```python
+x.a  # bar
+y.a  # foo
+A.a  # foo
+```
+
+https://python-course.eu/oop/class-instance-attributes.php
+
+question id: 14a00550-9968-42e2-81c8-fdc15b9baccc
+
+
+### What would be the output?
+
+
+```python
+class A:
+    a = "foo"
+
+x = A()
+y = A()
+
+x.a  = "bar"
+
+A.a = "baz"
+
+x.a  # ?
+y.a  # ?
+A.a  # ?
+```
+
+answer:
+
+```python
+x.a  # bar
+y.a  # baz
+A.a  # baz
+```
+
+https://python-course.eu/oop/class-instance-attributes.php
+
+question id: f6facce1-d384-4e07-ab26-ef1e4f7e01a9

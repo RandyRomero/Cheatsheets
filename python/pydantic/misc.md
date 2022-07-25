@@ -74,3 +74,103 @@ print(co_model)  #> id=123 public_key='foobar' name='Testing' domains=['example.
 https://pydantic-docs.helpmanual.io/usage/models/#orm-mode-aka-arbitrary-class-instances
 
 question id: df463ddc-f804-40ca-8d4d-d513033265c0
+
+### How to give a field a static default value?
+
+You have a model like this
+
+```python
+from pydantic import BaseModel
+
+class Blog(BaseModel):
+    name: str
+```
+
+You want that every time that name is not provided to set the value of it to be 'player`
+How would you do this?
+
+answer:
+
+```python
+from pydantic import BaseModel, Field
+
+class Blog(BaseModel):
+    name: str = Field(default="player")
+```
+
+question id: 30ef94a1-a1bc-441b-a899-bfc79ad48730
+
+
+
+### How to give a field dynamic default? Something that a function would return on each call
+
+You have a model and a function like this
+
+```python
+from pydantic import BaseModel
+
+class Blog(BaseModel):
+    name: str
+
+def get_random_name():
+    pass  # implementation doesn't matter
+```
+
+How would you assign this function to give a default name for Blog model on creation by default?
+
+answer:
+
+```python
+from pydantic import BaseModel, Field
+
+def get_random_name():
+    pass
+
+class Blog(BaseModel):
+    name: str = Field(default_factory=get_random_name)
+```
+
+Note that `Field(default=get_random_name())` won't properly work - it will remember once 
+evaluated value and give it by default every time
+
+question id: 0a48c21f-608c-4fbb-934c-ae9036ce857d
+
+
+### How to preprocess a field?
+
+You have a model like this:
+```python
+from pydantic import BaseModel
+
+class Blog(BaseModel):
+    name: str
+```
+
+You want to replace in `name` every white space with an undersocre. How would you do this?
+
+answer:
+
+```python
+from pydantic import BaseModel, validator
+
+class Blog(BaseModel):
+    name: str
+
+    @validator("name", pre=True):
+    def change_name(cls, value: str) -> str:
+        return value.replace(" ", "_")
+```
+
+Note: if you just want to strip whitespace from the beginning and the end, you need:
+
+```python
+class Blog(BaseModel):
+    name: str
+
+    class Config:
+        anystr_strip_whatespace = True
+```
+but it will work on all fields. And it is googled easily.
+
+
+question id: 7b83a720-5d32-4975-82f1-71047697f834
