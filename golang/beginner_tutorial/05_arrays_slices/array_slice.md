@@ -1,4 +1,4 @@
-### How to append to a list?
+### How to append to a slice?
 
 ```go
 package main

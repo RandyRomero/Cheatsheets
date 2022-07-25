@@ -16,7 +16,7 @@ Key point: variable names your put in tuple, values should be in list - one tupl
 question id: 3368cdbb-bb6a-4321-b925-011455dc809e
 
 
-### How to ensure that calling a function raises an error? 
+### How to assert that calling a function raises an error? 
 
 answer
 ```python
