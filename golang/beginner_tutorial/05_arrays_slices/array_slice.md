@@ -59,20 +59,20 @@ package main
 
 import "fmt"
 
-func get_numbers(start, end int) []int {
+func getNumbers(start, end int) []int {
 
-	numbers_length := end - start
+	numbersLength := end - start
 
-	numbers := make([]int, numbers_length)
+	numbers := make([]int, numbers:ength)
 
-	for i := 0; i < numbers_length; i++ {
+	for i := 0; i < numbersLength; i++ {
 		numbers[i] = i + start
 	}
 	return numbers
 }
 
 func main() {
-	numbers := get_numbers(10, 21)
+	numbers := getNumbers(10, 21)
 	fmt.Println(numbers)
 }
 ```

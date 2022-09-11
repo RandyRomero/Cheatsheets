@@ -3,7 +3,7 @@
 answer:
 
 Find in current working directory all the files with *.txt extension.
-The method will return a generator with file names.
+The method will return a generator with paths to these files.
 
 question id: 472f7638-0fb3-4f22-b234-733ede41380f
 

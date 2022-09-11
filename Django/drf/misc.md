@@ -155,7 +155,7 @@ class PforileSerializer(serializers.Serializer):
 ```
 
 
-### How to get instance of your object in serializer?
+### How to get an instance of your object in serializer?
 
 In short: through self.instance attribute of the serializer
 

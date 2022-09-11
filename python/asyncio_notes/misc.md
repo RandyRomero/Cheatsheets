@@ -119,7 +119,7 @@ question id: 538b1af7-9420-4d1f-98f2-f62fbe923a61
 
 
 
-### How to cancel an awaitable if we don't want to wait for too long?
+### How to cancel an awaitable on a timeout if we don't want to wait for too long?
 
 Use asyncio.wait_for(awaitable, timeout) like this:
 
@@ -179,6 +179,20 @@ the timeout.
 It's seems to be alike with asyncio.gather(), but it is actually different. .gather() returns you
 the result of your coroutines, .wait() returns two sets of Tasks: done and pending (means still 
 pending after reaching the timeout).
+
+What can you do with these sets? For example, you can measure and show some progress to a user or whatever - 
+how many tasks are completed and how many are still in progress. An example:
+
+```python
+todo = {}
+task = asyncio.create_task(some_coroutine, name=coro_name)
+todo.add(task)
+
+while len(todo):
+    done, _pending = await asyncio.wait(todo, timeout=0.5)
+    todo.difference_update(done)  # delete tasks that are done from the set
+```
+
 
 question id: fe2f5467-1f7b-4df2-b55f-3eed18bcaa27
 

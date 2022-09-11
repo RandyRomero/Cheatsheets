@@ -107,7 +107,7 @@ def counting_sort(
 
 
 if __name__ == "__main__":
-    my_list = [49, 54, 45, 51, 41, 50, 46, 47]
+    my_list = [49, 54, 45, 51, 41, 50, 50, 46, 47]
 
     sorted_list = sorted(my_list)
     sorted_by_counting_sort = counting_sort(my_list, 41, 54)

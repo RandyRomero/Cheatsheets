@@ -60,7 +60,7 @@ s1 ^ s2  # output {1, 2, 4, 5}
 question id: 03c8ad74-9aff-4de8-81d5-8f55149e7695
 
 
-### How to delete values from set that are in another set?
+### How to delete values from a set that are in another set?
 
 For example, you have a set A {1, 2, 3, 4, 5} and set B {3, 4, 5} and you want to remove from set
 A items that are in set B. How to do it in one line?
@@ -107,7 +107,7 @@ answer
 question id: b0e6d356-c456-4060-a194-e4390e9a931d
 
 
-### How to find difference between two sets?
+### How to leave in a set only values that are not present in another set?
 
 For example, you have these sets:
 ```python
@@ -115,14 +115,12 @@ x = {"apple", "banana", "cherry"}
 y = {"google", "microsoft", "apple"}
 ```
 
-How to find the difference?
+and you want to update `x` set so there will left be only the values,
+that do not present in `y` set = `{'banana', 'cherry'}`
+
 answer
 
 ```python
-x - y  # {'banana', 'cherry'}
-
-# or
-
 x.difference_update(y)
 print(x)  # {'banana', 'cherry'}
 ```
