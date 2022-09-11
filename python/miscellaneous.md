@@ -273,3 +273,24 @@ strings, tuples, bytes
 
 question id: 25b292f5-9077-4814-a462-f1c77b715f96
 
+
+### How to make an enumerable in Python?
+
+answer
+
+```python
+from enum import Enum
+
+class BaseEnum(str, Enum):
+    def __str__(self) -> str:
+        return self.value
+
+
+class Position(BaseEnum):
+    UP = "UP"
+    DOWN = "DOWN"
+
+print(Position.UP)
+```
+
+question id: 3a514a3e-243e-4328-bac0-6989470af2a5

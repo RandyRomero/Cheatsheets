@@ -174,3 +174,92 @@ but it will work on all fields. And it is googled easily.
 
 
 question id: 7b83a720-5d32-4975-82f1-71047697f834
+
+
+### How to validate a list of choices (enum)?
+
+```python
+from enum import Enum
+from pydantic import BaseModel
+
+class BaseEnum(str, Enum):
+    def __str__(self) -> str:
+        return self.value
+
+
+class SomeChoices(BaseEnum):
+    SOME = "SOME"
+    CHOICES = "CHOICES"
+
+# valid list
+some_list = ["SOME", "CHOICES"]
+
+# invalid list
+invalid_list = ["SOME", "FAILED"]
+```
+
+How to validate these lists with Pydantic?
+
+
+answer:
+```python
+from enum import Enum
+from pydantic import BaseModel
+
+class BaseEnum(str, Enum):
+    def __str__(self) -> str:
+        return self.value
+
+
+class SomeChoices(BaseEnum):
+    SOME = "SOME"
+    CHOICES = "CHOICES"
+
+# valid list
+some_list = ["SOME", "CHOICES"]
+
+# invalid list
+invalid_list = ["SOME", "FAILED"]
+
+
+class SomeChoiceSerializer(BaseModel):
+    some_choices: list[SomeChoices]
+
+
+valid_choices = SomeChoiceSerializer(some_choices=invalid_list)
+
+print(valid_choices)
+```
+
+question id: b897f0a8-139a-49f0-9d46-2d4c633667f2
+
+
+### How to validates several fields with Pydantic validator?
+
+Suppose you have a model like this:
+
+```python
+from pydantic import BaseModel, validator
+
+class Person(BaseModel):
+    first_name: str
+    last_name: str
+```
+
+How to validate both of these fields?
+
+answer:
+
+```python
+from pydantic import BaseModel, validator
+
+class Person(BaseModel):
+    first_name: str
+    last_name: str
+
+    @validator("first_name", "last_name"):
+    def validate_names(cls, value: str) -> str:
+        #do something
+```
+
+question id: 0a9ba6d9-16b0-42ce-baa4-7bc50a8c8be6
