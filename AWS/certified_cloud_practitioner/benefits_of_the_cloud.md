@@ -36,7 +36,7 @@ It means that you benefit from sharing costs with other users
 question id: 
 
 
-### What is 'elasticity' benefit of the cloud is about?
+### What is 'elasticity' benefit of the cloud about?
 
 It means automatic scaling on spikes and drop in demand
 

@@ -31,7 +31,7 @@ Objects can correspond to real-world objects or an abstract entity.
 question id: bd625d5d-8a5f-4826-97e4-6e5809a1320e
 
 
-### What is a Method in OOP?
+### What are methods in OOP?
 
 Methods are functions that are defined inside a class 
 that describe the behaviors of an object.
