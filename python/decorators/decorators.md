@@ -88,6 +88,42 @@ some_function = my_decorator(some_arg='some_value')(some_function)
 question id: 802d3642-7996-4af4-b2f4-7c292c42465d
 
 
+### How to write a decorator for an asynchronous function with type annotations?
+
+For example, you have some async function
+```python
+import asyncio
+
+async def foo():
+    await asyncio.sleep(1)
+```
+
+How to write a decorator for this func?
+
+answer
+
+```python
+import asyncio
+import typing as tp
+from functools import wraps
+
+
+def deco(func: tp.Callable[..., tp.Awaitable[T]]) -> tp.Callable[..., tp.Awaitable[T]]:
+    @wraps(func)
+    @tp.no_type_check
+    async def wrapper(*args, **kwargs):
+        # do_something
+        return await func(*args, **kwargs)
+    return wrapper
+
+@deco    
+async def foo():
+    await asyncio.sleep(1)
+```
+
+question id: 510b188c-f255-4247-8569-d306606ccc02
+
+
 ### You have a decorator, but it doesn't let you to pass arguments to the decorated function. How to fix it?
 
 ```python

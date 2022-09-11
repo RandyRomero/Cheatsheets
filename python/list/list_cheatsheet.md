@@ -378,3 +378,18 @@ print(b)  # []
 
 question id: c11bc84a-e223-450d-8726-a89ab46d5954
 
+
+### What would be the result of this expression?
+
+```python
+[] * 10
+```
+
+answer
+
+
+```python
+[] * 10  # []
+```
+
+question id: b1b21d23-c80b-43ca-9ba4-35747267a0ab

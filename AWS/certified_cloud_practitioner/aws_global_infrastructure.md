@@ -160,7 +160,7 @@ The purpose of a fault domain is that if a failure occurs it will not cascade ou
 question id: f3570052-f5db-4aa3-9ab0-c2b006eb2fba
 
 
-### How section of a network that is vulnerable to damage if a critical device or system fails is called?
+### How a section of a network that is vulnerable to damage if a critical device or system fails is called?
 
 answer:
 
@@ -229,15 +229,22 @@ question id: ff92b17a-3f0c-4ada-9c47-6961f354b007
 
 ### What are Points of Presence (PoP)?
 
-Points of Presence (PoP) are intermediate locations (datacenters of a collection of hardware) between an AWS Region and the end-user.
+Points of Presence (PoP) are intermediate locations (datacenters or a collection of hardware) between an AWS Region and the end-user.
 
 question id: 0f3ae88e-d7e3-428f-b998-21a3a973c463
 
 
+### What are intermediate locations between an AWS Region and the end-user, and this location could be a data center or a collection of hardware?
+
+Points of presence
+
+question id: 19c240f8-5b61-4e62-83be-08e6847aaebb
+
+
 ### What are Edge Locations in AWS?
 
-Edge Locations - are datacenters that hold cached (copy) on the most popular files (eg. web pages, images and videos) 
-so that the delivery of distance to the end users are reduce
+Edge Locations - are datacenters that hold cached (copy) of the most popular files (eg. web pages, images and videos) 
+so that the distance of delivery to the end users is reduced
 
 question id: 0ef61e3b-5b0a-4f65-ba2b-1c0e8eb74e17
 
@@ -248,6 +255,14 @@ Regional Edge Cache - are datacenters that hold much larger caches (than Edge Lo
 files to reduce a full round trip and also to reduce the cost of transfer fees.​
 
 question id: ea119206-9aa2-44b0-8129-ed54c8371f97
+
+
+### What are datacenters that hold much larger caches (than Edge Locations) of less popular files?
+
+These are Regional Cache - datacenters that hold much larger caches (than Edge Locations) of less-popular 
+files to reduce a full round trip and also to reduce the cost of transfer fees.​
+
+question id: c78580ee-1ded-47a8-8b97-a46ad6e46270
 
 
 ### What AWS services use Point of Presence?
@@ -279,6 +294,8 @@ question id: 0e121eca-a8ac-490b-abf3-8d9098bef69f
 It as a special AWS feature, that you can turn on and off separately, that increases the speed of transfering between your bucket
 and an end-user by leveraging Edge Locations.
 
+question id: 
+
 
 ### How does AWS S3 Transfer Acceleration work? 
 
@@ -292,7 +309,9 @@ question id:
 
 ### What is AWS Global Accelerator?
 
+Global Accelerator is a service that uses Edge Locations to find an optimal pathway to the nearest regional endpoint.
 
+question id: 
 
 
 ### What are Edge Locations in AWS?

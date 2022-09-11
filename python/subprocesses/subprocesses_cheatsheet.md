@@ -1,5 +1,47 @@
 https://levelup.gitconnected.com/how-to-execute-shell-commands-properly-in-python-5b90c1a9213f
 
+
+### How to start a shell command from Python and get its result back? In synchronous Python
+
+answer:
+```python
+import subprocess
+
+result = subprocess.run("some command", check=True, capture_output=True)
+```
+
+question id: 5bd05406-1643-4de3-b3dc-1d3e58078215
+
+
+### How to start a shell command from Python and get its result back? In async Python
+
+```python
+import asyncio
+from asyncio.subprocess import PIPE
+
+async def run_shell_command(cmd: str) -> str:
+    process = await asyncio.create_subprocess_shell(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+    stdout, stderr = await process.communicate()
+    if process.returncode and process.returncode != 0:
+        raise subprocess.CalledProcessError(process.returncode, cmd, stderr=stderr.decode())
+    return stdout.decode()
+```
+
+question id: 8747c63c-1c5f-4db7-b62f-6aee71ace461
+
+
+### How to run asynchronously a shell command from Python and do not wait for it to finish?
+
+```python
+import asyncio
+
+async def run_shell_command(cmd):
+    await asyncio.create_subprocess_shell(cmd)
+```
+
+question id: b2f9eccc-7c23-4f2d-9eac-cada6493aa44
+
+
 ### What is subprocess.run()?
 
 It is a function to run a shell command from inside Python script and wait for it to finish.

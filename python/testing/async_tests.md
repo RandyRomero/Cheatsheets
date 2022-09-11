@@ -1,4 +1,4 @@
-### You want to assign a mock to an async method of a class. How?
+### Python <= 3.7. You want to assign a mock to an async method of a class. How?
 
 ```python
 import TokenRefresher
@@ -12,17 +12,45 @@ async def test_check_if_token_is_valid(redis_manager):
 answer
 Use CoroutineMock() from asynctest
 ```python
-import asynctest
+from asynctest import CoroutineMock
 
 import TokenRefresher
 
 async def test_check_if_token_is_valid():
 
     token_refresher = TokenRefresher()
-    token_refresher.some_method = asynctest.CoroutineMock(return_value='whatever you want')
+    token_refresher.some_method = CoroutineMock(return_value='whatever you want')
 ```
 
 question id: 2c2072d7-0180-4754-8de2-3b41d3341ec9
+
+
+### Python >= 3.8. You want to assign a mock to an async method of a class. How?
+
+```python
+import TokenRefresher
+
+async def test_check_if_token_is_valid(redis_manager):
+
+    token_refresher = TokenRefresher(redis_manager)
+    token_refresher.some_method =  # assign your mock here
+```
+
+answer
+Use AsyncMock() from unittest.mock
+```python
+from unittest.mock import AsyncMock
+
+import TokenRefresher
+
+async def test_check_if_token_is_valid():
+
+    token_refresher = TokenRefresher()
+    token_refresher.some_method = AsyncMock(return_value='whatever you want')
+```
+
+question id: e3542df3-d6fb-43e6-8762-b16f2a2ba9e9
+
 
 
 
