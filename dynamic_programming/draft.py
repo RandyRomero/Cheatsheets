@@ -3,7 +3,7 @@ def fib(n):
         # print(counter)
         if counter == n:
             return b
-        return draft(b, a + b, counter+1)
+        return draft(b, a + b, counter + 1)
 
     return draft(0, 1, 1)
 
@@ -24,27 +24,33 @@ def fib1(n):
     a = 0
     b = 1
     # temp_sum = 0
-    for i in range(n-1):
+    for i in range(n - 1):
         temp_sum = a + b
         a = b
         b = temp_sum
 
-    return(temp_sum)
+    return temp_sum
+
+
 # def draft(a, b, counter):
 #     print(counter)
 #     if counter == 7:
 #         return b
 #     return draft(b, a + b, counter+1)
 
+
 def cache(func):
     cache = {}
+
     def wrapper(n):
         if n in cache:
             return cache[n]
         result = func(n)
         cache[n] = result
         return result
+
     return wrapper
+
 
 @cache
 def fib2(n):
@@ -52,7 +58,6 @@ def fib2(n):
         return 1
     return fib2(n - 1) + fib2(n - 2)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print(fib3(9))
-
-

@@ -1,0 +1,8 @@
+{
+    "hey": "hi",
+    "animals": [
+        "cats",
+        "dogs"
+    ],
+    "age": 3.5
+}

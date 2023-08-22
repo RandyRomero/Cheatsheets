@@ -1,4 +1,3 @@
-
 class Employee:
     """Some employee."""
 

@@ -294,3 +294,54 @@ print(Position.UP)
 ```
 
 question id: 3a514a3e-243e-4328-bac0-6989470af2a5
+
+
+### How to make an enumerable with properties that return set of attributes?
+
+For example you have enumerable
+```python
+from enum import Enum
+
+class BaseEnum(str, Enum):
+    def __str__(self) -> str:
+        return self.value
+
+
+class Count(BaseEnum):
+    ONE = "ONE"
+    TWO = "TWO"
+    THREE = "THREE"
+    FOUR = "FOUR"
+    FIVE = "FIVE"
+```
+
+but you want to return also groups of attributes as a set, like
+
+```python
+Count.odd  # {<Count.FOUR: 'FOUR'>, <Count.TWO: 'TWO'>}
+Count.even # {<Count.THREE: 'THREE'>, <Count.FIVE: 'FIVE'>, <Count.ONE: 'ONE'>}
+```
+
+How would you do this?
+
+answer
+
+```python
+from enum import Enum
+
+class BaseEnum(str, Enum):
+    def __str__(self) -> str:
+        return self.value
+
+
+### How to get a path to the current Python executable programmatically?
+
+answer:
+
+```python
+import sys
+
+sys.executable  # "/path/to/bin/python"
+```
+
+question id: f28fecf1-49eb-42f7-9524-37bc1aaead93

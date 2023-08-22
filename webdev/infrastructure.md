@@ -1,20 +1,5 @@
-### What is container? 
-
-Container - it's a separate linux process. In isolated environment 
-where an application can run based on all the necessary components 
-and dependencies packed inside.
-
-https://dysnix.com/blog/kubernetes-vs-serverless-part-1/
-
-question id: 166c0543-8980-4d21-8b23-876495154045
 
 
-### What is containerization?
-
-Containerization - the process of packing an app into containers
-and filling them with all necessary stuff in order to work flawlessly.
-
-question id: 311e6fde-77a2-448e-a063-436532f86aca
 
 
 ### What are microservices? 
@@ -60,22 +45,6 @@ https://serverless-stack.com/chapters/what-is-serverless.html
 
 question id: b19d3b67-bb98-47fa-a6af-1b45d0b262a5
 
-
-### What is Docker?
-
-- a tool for containerazation of applications/code
-- a tool for running/managing such containers
-- a platform which allows you to share these containers and use containers other people shared
-
-Docker is a software platform for building, running, and managing
-applications based on containers — small and lightweight execution environments 
-that make shared use of the operating system kernel but otherwise run in 
-isolation from one another. While containers have been used in Linux and Unix 
-systems for some time, Docker, an open source project launched in 2013, 
-helped popularize the technology by making it easier than ever for developers 
-to package their software to “build once and run anywhere.”
-
-question id: 79a5fcb4-e53c-48d4-be59-7f49163157f1
 
 
 ### What are Kubernetes pros over Serverless? (3)   

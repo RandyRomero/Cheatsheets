@@ -99,7 +99,7 @@ Adding a second time is OK, it will not duplicate the relation
 question id: f1efc3e5-c03b-4386-ab70-a29898bde1ab
 
 
-### Create and add an Article to a Publication in one step using `create()`:
+### Create and add an Article to a Publication via publication instance:
 
 Article and Publications are related via m2m relationship
 (https://docs.djangoproject.com/en/3.1/topics/db/examples/many_to_many/#many-to-many-relationships)

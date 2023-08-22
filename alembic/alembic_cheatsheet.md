@@ -47,3 +47,14 @@ answer:
 `alembic history (--verbose)`
 
 question id: cf60fcf2-8ae5-4a43-ba1c-941f387f8246
+
+
+### How to check SQL of a migration before applying it?
+
+
+answer:
+`alembic upgrade head (or migration uuid) --sql > migration.sql`
+
+then check migration.sql file
+
+question id: 1c4ab2dc-0075-4aaf-8bb4-a570ef1838a6

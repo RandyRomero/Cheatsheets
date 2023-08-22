@@ -10,5 +10,3 @@ class Shape(object):
     def method_to_implement(self, input):
         """Method documentation"""
         return
-
-

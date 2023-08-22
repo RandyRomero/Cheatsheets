@@ -2,8 +2,10 @@ import pickle
 from functools import wraps
 from time import sleep
 
+
 def memoize(func):
     cache = {}
+
     @wraps(func)
     def wrapper(*args, **kwargs):
         key = (pickle.dumps(args), pickle.dumps(kwargs))
@@ -12,6 +14,7 @@ def memoize(func):
         result = func(*args, **kwargs)
         cache[key] = result
         return result
+
     return wrapper
 
 

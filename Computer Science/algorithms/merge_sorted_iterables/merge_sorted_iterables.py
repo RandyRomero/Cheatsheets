@@ -47,4 +47,6 @@ def k_way_merge(*iterables: tp.Iterable[VALUE]) -> tp.Iterator[VALUE]:
         yield from iterables[0]
     else:
         mid = len(iterables) // 2
-        yield from two_way_merge(k_way_merge(*iterables[:mid]), k_way_merge(*iterables[mid:]))
+        yield from two_way_merge(
+            k_way_merge(*iterables[:mid]), k_way_merge(*iterables[mid:])
+        )

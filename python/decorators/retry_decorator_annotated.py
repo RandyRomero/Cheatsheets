@@ -5,10 +5,14 @@ from time import sleep
 
 FUNC = tp.TypeVar("FUNC", bound=tp.Callable[..., tp.Any])
 
-def retry(*exceptions: tp.Type[Exception], attempts: int, timeout: int = 1) -> tp.Callable[[FUNC], FUNC]:
+
+def retry(
+    *exceptions: tp.Type[Exception], attempts: int, timeout: int = 1
+) -> tp.Callable[[FUNC], FUNC]:
     def outer_wrapper(func) -> FUNC:
         counter = 0
         wraps(func)
+
         def inner_wrapper(*args, **kwargs):
             nonlocal counter
             for i in range(attempts):
@@ -20,7 +24,9 @@ def retry(*exceptions: tp.Type[Exception], attempts: int, timeout: int = 1) -> t
                     if counter >= attempts:
                         raise err
                     sleep(timeout)
+
         return tp.cast(FUNC, inner_wrapper)
+
     return outer_wrapper
 
 

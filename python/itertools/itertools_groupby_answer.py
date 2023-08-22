@@ -10,7 +10,8 @@ things = [
 ]
 
 
-def key(x): return x[0]
+def key(x):
+    return x[0]
 
 
 # groupby() only works on sorted iterables

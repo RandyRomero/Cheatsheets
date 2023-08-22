@@ -4,6 +4,7 @@ from aio_pika import connect_robust, ExchangeType, IncomingMessage
 
 from constants import EXCHANGE_NAME, ROUTING_KEY, RABBIT_CREDENTIALS
 
+
 async def on_message(message: IncomingMessage):
     with message.process():
         print(message.body.decode())
@@ -21,9 +22,9 @@ async def main(loop):
     await queue.bind(exchange=exchange, routing_key=ROUTING_KEY)
 
     await queue.consume(on_message)
-    
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.create_task(main(loop))
     loop.run_forever()

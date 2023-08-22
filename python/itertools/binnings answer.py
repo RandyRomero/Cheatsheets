@@ -24,18 +24,21 @@ class Binnings:
         return grouped_binnings
 
 
-binnings = Binnings(items=[-0.234,
-                           -0.04325,
-                           -0.43134,
-                           -0.315,
-                           -0.6322,
-                           -0.245,
-                           -0.5325,
-                           -0.6341,
-                           -0.5214,
-                           -0.531,
-                           -0.124,
-                           -0.0252,
-                           ])
+binnings = Binnings(
+    items=[
+        -0.234,
+        -0.04325,
+        -0.43134,
+        -0.315,
+        -0.6322,
+        -0.245,
+        -0.5325,
+        -0.6341,
+        -0.5214,
+        -0.531,
+        -0.124,
+        -0.0252,
+    ]
+)
 
 print(binnings.group_by_first_digit_after_dot())

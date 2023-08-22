@@ -136,15 +136,35 @@ Write a function that takes any iterable (list, TextIOWrapper, etc) and returns 
 of the given iterable from 0 to the n-th one.
 
 It should be lazy iterable (not load all results to the memory at once)
+The function should be type hinted.
 
 For example:
 ```python
 def islice(itrbl, stop):
     # your code here
 
-with open("whatever", "r") as infile:
-    first_three_lines = islice(infile, 3)
-    print(first_three_lines)
+animals = [
+    "alligator",
+    "antelope",
+    "bear",
+    "beaver",
+    "camel",
+    "capybara",
+    "cheetah",
+    "chimpanzee",
+    "cow",
+    "dolphin",
+    "donkey",
+    "duck",
+    "eagle",
+    "elephant",
+    "ferret",
+    "flamingo",
+]
+
+
+for nums in islice(animals, 8):
+    print(nums)
 ```
 
 answer:
@@ -158,6 +178,29 @@ def islice(itrbl : VALUE, stop: int) -> tp.Iterator[VALUE]:
         if i >= stop:
             return
         yield item
+
+animals = [
+    "alligator",
+    "antelope",
+    "bear",
+    "beaver",
+    "camel",
+    "capybara",
+    "cheetah",
+    "chimpanzee",
+    "cow",
+    "dolphin",
+    "donkey",
+    "duck",
+    "eagle",
+    "elephant",
+    "ferret",
+    "flamingo",
+]
+
+
+for nums in islice(animals, 8):
+    print(nums)
 ```
 
 question id: 4bcf717b-df8c-4471-917a-864c3668778b
@@ -177,13 +220,23 @@ values at each iteration as a list of values
 
 For example:
 ```python
+numbers = list(range(100))
+chunk_size = 4
+
+
 class Chunked:
     # your code here
 
 
-with open("whatever", "r") as infile:
-    for three_lines in Chunked(infile, 3):
-        save_to_another_file(three_lines)
+for chunk in Chunked(numbers, chunk_size):
+    print(chunk)
+
+# [0, 1, 2, 3]
+# [4, 5, 6, 7]
+# [8, 9, 10, 11]
+# [12, 13, 14, 15]
+# [16, 17, 18, 19]
+...
 ```
 
 answer:
@@ -269,21 +322,27 @@ def my_chunked(iterable: tp.Iterable[VALUE], chunk_size: int) -> tp.Iterator[tp.
 question id: 24f305fb-2a39-47b5-af8c-d3a4edfa9f21
 
 
-### How to split you Sequence by chunks of given size?
+### Split a list
 
+Suppose you have a long list of items, but you want to
+convert it to a list of short lists
+For example, you have a list
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+but you want
+[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+How would you do that?
+
+a template:
 ```python
-lst = list(range(61))
-n = 3
+foo = list(range(100))
+chunk_size = 3
 
-for chunk in ...:
-    print(chunk) # [1, 2, 3]  
+# your code here
 ```
 
-answer
+answer:
 ```python
-numbers = list(range(61))
-chunk_size = 3
-print(list((numbers[i:i + chunk_size] for i in range(0, len(numbers), chunk_size))))
+[foo[i:i+chunk_size] for i in range(0, len(foo), chunk_size)]  # [[1, 2, 3], [4, 5, 6], [7, 8, 9]...]
 ```
 
 question id: bf2a9e82-b428-442b-9ec8-28214c87b352

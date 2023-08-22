@@ -25,7 +25,7 @@ https://python-poetry.org/docs/cli/#version
 question id: 0141d980-9d0a-4bc3-8fdc-805534afd38a
 
 
-### How to install extra dependencies of some package?
+### How to install a library with its extra dependencies?
 
 answer:
 
@@ -34,3 +34,4 @@ answer:
  will install main package with extra dependencies
 
  question id: 396cea0b-9edf-4a6a-a4b1-297609cec861
+

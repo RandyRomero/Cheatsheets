@@ -1,7 +1,9 @@
 def power_factory(exp):
     def power(base):
-        return base ** exp
+        return base**exp
+
     return power
+
 
 square = power_factory(2)
 

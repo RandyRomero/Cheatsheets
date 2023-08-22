@@ -7,7 +7,7 @@ things = [
     ("animal", "duck"),
     ("vehicle", "speed boat"),
     ("plant", "cactus"),
-          ]
+]
 
 # your code here...
 

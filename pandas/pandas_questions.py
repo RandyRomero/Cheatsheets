@@ -1,10 +1,10 @@
 import pandas as pd
 
-pd.set_option('display.max_rows', 500)
-pd.set_option('display.max_columns', 10)
-pd.set_option('display.width', 1000)
+pd.set_option("display.max_rows", 500)
+pd.set_option("display.max_columns", 10)
+pd.set_option("display.width", 1000)
 
-df_smartphones = pd.read_excel('smartphones.xlsx')
+df_smartphones = pd.read_excel("smartphones.xlsx")
 
 
 def create_series() -> None:
@@ -41,8 +41,9 @@ def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
 
     # preparing (make some columns contain nan values)
     df_with_nan = df.copy(deep=True)
-    df_with_nan[df_with_nan[['all cores', 'one core',
-                             'total score']] < 1000] = pd.np.nan
+    df_with_nan[
+        df_with_nan[["all cores", "one core", "total score"]] < 1000
+    ] = pd.np.nan
 
     # your code here...
 
@@ -60,15 +61,17 @@ def groupby_unique() -> None:
 
     """
 
-    df = pd.DataFrame({'Name': ['Corey', 'Harrison', 'Michael', 'David'],
-                       'City': ['Vancouver',
-                                'Miami',
-                                'Portland',
-                                'Miami']})
+    df = pd.DataFrame(
+        {
+            "Name": ["Corey", "Harrison", "Michael", "David"],
+            "City": ["Vancouver", "Miami", "Portland", "Miami"],
+        }
+    )
 
     # your code here
 
     # output: True
+
 
 def groupby_unique_filter() -> None:
     """
@@ -81,11 +84,12 @@ def groupby_unique_filter() -> None:
 
     """
 
-    df = pd.DataFrame({'Name': ['Corey', 'Harrison', 'Michael', 'David'],
-                       'City': ['Vancouver',
-                                'Miami',
-                                'Portland',
-                                'Miami']})
+    df = pd.DataFrame(
+        {
+            "Name": ["Corey", "Harrison", "Michael", "David"],
+            "City": ["Vancouver", "Miami", "Portland", "Miami"],
+        }
+    )
 
     # your code here
 
@@ -96,4 +100,3 @@ def groupby_unique_filter() -> None:
     3       David
     Name: Name, dtype: object
     """
-

@@ -2,8 +2,9 @@
 
 answer:
 
-Heap is a data structure. There are min and max heaps.
-Min (binary) heap is a complete binary tree where each node is smaller or equal than its children.
+Binary Heap is a data structure. More specifically it's a complete binary tree.
+
+There are min and max heaps. In min binary heap each node is smaller or equal than its children.
 Max heap is vice versa.
 
 ![binary heap](binary_heap.png)
@@ -190,7 +191,7 @@ For building a heap from an array you can choose sift-up or sift-down operation.
 One leads to far less operations than the other. 
 
 Imagine you have a heap of 16 elements, that means that the height of the heap is 4
-(because hight of binary tree is O(logn)). That means that root node is 4 levels 
+(because height of binary tree is O(logn)). That means that root node is 4 levels 
 from the bottom nodes, and nodes on the bottom level are 4 levels from the root node. 
 
 However, there are only 1 node that is the deepest - the root node. And

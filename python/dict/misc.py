@@ -1,4 +1,4 @@
-user = {"profile": {"address": {"city": 'Moscow'}}}
+user = {"profile": {"address": {"city": "Moscow"}}}
 
 user_city = user.get("profile", {}).get("address", {}).get("city", "")
 

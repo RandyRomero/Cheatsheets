@@ -70,3 +70,13 @@ question id: dabde38a-2adf-4ca3-9ec4-11b761526740
 NGINX high‑performance, highly scalable web server, reverse proxy, load balancer.
 
 question id: bb7d9a13-34a0-4973-86b7-65e4293a08f
+
+
+### How does nginx and gunicorn communicate?
+
+answer:
+
+Over HTTP. nginx receives request from the internet, serve static content itself, 
+but requests for dynamically generated responses it forwards to the gunicorn.
+
+question id: 6013c185-2e3c-4214-8b55-0f6d55310952

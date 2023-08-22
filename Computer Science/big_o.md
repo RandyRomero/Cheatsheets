@@ -8,7 +8,7 @@ question id: d549dca7-790b-4014-932f-8d8e24feb67e
 ### What is Big O notaion? 
 
 It's mathematical notation that is used to describe scalability of an algorithms. In other words,
-how would grow the number of operations if the value of elements will grow in a certain way.
+how would the number of operations grow if the value of elements grows in a certain way.
 
 For example, if an algorithm has O(1) or constant time complexity, the number of operations doesn't
 change no matter how many values you have, just one or one billion. For O(n) or linear time complexity
@@ -116,7 +116,7 @@ For every additional 1000 items, we would require 1,000,000 additional operation
 question id: 483eb155-9020-43d5-99ae-b194ba0a5858
 
 
-### What is exponential - O(2^n) - time complexity means?
+### What does exponential - O(2^n) - time complexity mean?
 
 1 items = ~ 2 operations
 2 items = 4 operations

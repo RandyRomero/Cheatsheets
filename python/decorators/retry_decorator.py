@@ -6,6 +6,7 @@ def retry(*exceptions, attempts, backoff=1):
     def outer_wrapper(func):
         counter = 0
         wraps(func)
+
         def inner_wrapper(*args, **kwargs):
             nonlocal counter
             for i in range(attempts):
@@ -17,7 +18,9 @@ def retry(*exceptions, attempts, backoff=1):
                     if counter >= attempts:
                         raise err
                     sleep(backoff)
+
         return inner_wrapper
+
     return outer_wrapper
 
 

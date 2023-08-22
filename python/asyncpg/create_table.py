@@ -3,13 +3,15 @@ import asyncpg
 
 from settings import settings
 
+
 async def get_connection():
     return await asyncpg.connect(
         database=settings.DB_NAME,
         user=settings.DB_USER,
         password=settings.DB_PASSWORD,
         host=settings.DB_HOST,
-        port=settings.DB_PORT,)
+        port=settings.DB_PORT,
+    )
 
 
 async def main():
@@ -18,12 +20,12 @@ async def main():
 
 
 async def create_table(conn):
-    sql = '''
+    sql = """
     CREATE TABLE tickers(
         id SERIAL PRIMARY KEY,
         name VARCHAR(10) NOT NULL UNIQUE
         )
-    '''
+    """
 
     try:
         await conn.execute(sql)
@@ -34,5 +36,5 @@ async def create_table(conn):
         await conn.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(main())
