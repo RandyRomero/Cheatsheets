@@ -20,19 +20,19 @@ async def main():
 
 
 async def get_tickers(pool):
-    sql = '''
+    sql = """
     SELECT * FROM tickers
     WHERE id = any($1::int[])
-    '''
+    """
 
     async with pool.acquire() as conn:
         try:
-            resp = await conn.fetch(sql, [1,2,3])
+            resp = await conn.fetch(sql, [1, 2, 3])
             print(resp)
         except (asyncpg.DataError, asyncpg.UniqueViolationError) as err:
             print("error")
             print(err)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(main())

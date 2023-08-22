@@ -17,6 +17,31 @@ animals["cats"] = 4  # TypeError: 'mappingproxy' object does not support item as
 question id: a66f16e7-16ff-4020-b83c-3495ef68aabd
 
 
+### How to make a read-only dictionary?
+
+You have a dictionary like this:
+```python
+animals = {"cats": 3, "dogs": 4}
+```
+
+How to make it read-only?
+
+answer:
+
+
+```python
+from types import MappingProxyType
+
+_animals = {"cats": 3, "dogs": 4}
+
+animals = MappingProxyType(_animals)
+
+animals["cats"] = 4  # TypeError: 'mappingproxy' object does not support item assignment 
+```
+
+question id: d4a794a9-3557-4ee1-bb5b-69e9311ad6dc
+
+
 ### Create a dict with the same initial values (show two ways)
 
 ```python

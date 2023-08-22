@@ -196,6 +196,47 @@ def merge_two_sorted_iterables(
 print(list(merge_two_sorted_iterables(first_list, second_list)))
 ```
 
+Or, another but similar way to implement it:
+```python
+first_list = []
+second_list = [4, 9, 15, 20, 27, 66]
+
+def merge_two_sorted_iterables(left, right):
+    left_iterator = iter(left)
+    right_iterator = iter(right)
+
+    try:
+        left_value = next(left_iterator)
+    except StopIteration:
+        yield from right_iterator
+        return
+
+    try:
+        right_value = next(right_iterator)
+    except StopIteration:
+        yield from left_iterator
+        return
+
+    while True:
+        if left_value < right_value:
+            yield left_value
+            try:
+                left_value = next(left_iterator)
+            except StopIteration:
+                yield from right_iterator
+                return
+        else:
+            yield right_value
+            try:
+                right_value = next(right_iterator)
+            except StopIteration:
+                yield from left_iterator
+                return
+
+    
+print(list(merge_two_sorted_iterables(first_list, second_list)))
+```
+
 question id: 12655194-478d-482c-bb93-a90b5edd0190
 
 

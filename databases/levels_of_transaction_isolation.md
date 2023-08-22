@@ -1,7 +1,7 @@
 Useful links:
 https://www.postgresql.org/docs/current/transaction-iso.html
 
-### What are level of transaction isolation in databases?
+### What are levels of transaction isolation in databases?
 
 Levels of isolation are basically rules how a transaction can interact with
 data that is modified by another transaction.
@@ -48,14 +48,35 @@ question id: 916e6427-12b9-4dd8-8b39-981491ce9586
 
 ### What is Read Repeatable level of transaction isolation?
 
-The Repeatable Read isolation level means that you one transaction
-cannot modify data in rows that are being read by another transaction.
-So to avoid situations when your transaction reads data at the begging,
-then reads it again after a while and the data have been changed already.
-So if the data is committed already by the transaction T2, T1 still won't see
-this changes.
+First of all, a repeatable read transaction cannot modify or lock rows changed by other transactions after the repeatable read transaction began.
+So, if two or more transaction will try to update the same data at the same time, as soon as one transation has committed an update, the other one will fail.
 
-https://jennyttt.medium.com/dirty-read-non-repeatable-read-and-phantom-read-bd75dd69d03a
+
+Also, all commands within a transaction in this mode will see the data in the database as it was when the transaction has started.
+
+
+The Repeatable Read level of isolation solves a phenomena that is called 'nonrepeatable read'.
+Non-repeatable read is when, for example, two transactions first select, than update a certain row or bunch of rows like this:
+
+Transaction 1: selects row id 1
+Transaction 2: selects row id 1
+--at this point both transaction read exactly the same values from the rows--
+Transaction 1: updates row id 1
+--at this point the data in row id 1 has changed, but Transaction 2 doesn't know it--
+Transaction 2: updates row id 1
+
+So we can end up with inconsistent state because Transaction 2 updates the row based on what its state was 
+before Transaction 1 has changed it.
+It's the same situation where we can use SELECT FOR UPDATE.
+
+
+A transaction re-reads data it has previously read and finds that data has been modified by another transaction (that committed since the initial read).
+
+The difference between Repeatable Read and SELECT FOR UPDATE that in the first case your transaction sees that data as it was before the transaction,
+but cannot change this data if it was changed by another transaction concurrently.
+With SELECT FOR UPDATE a transaction cannot even see rows that another transaction works with.
+
+https://www.postgresql.org/docs/current/transaction-iso.html
 
 question id: 2effdfe3-ba07-4592-b523-194755cd7974
 

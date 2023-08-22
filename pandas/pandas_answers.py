@@ -1,10 +1,11 @@
 import pandas as pd
 
-pd.set_option('display.max_rows', 500)
-pd.set_option('display.max_columns', 10)
-pd.set_option('display.width', 1000)
+pd.set_option("display.max_rows", 500)
+pd.set_option("display.max_columns", 10)
+pd.set_option("display.width", 1000)
 
-df_smartphones = pd.read_excel('smartphones.xlsx')
+df_smartphones = pd.read_excel("smartphones.xlsx")
+
 
 def create_series() -> None:
     """
@@ -23,9 +24,9 @@ def create_series() -> None:
     question number: '8210081f-37a6-441f-a540-af9f1c6b84c1'
     """
 
-    songs = pd.Series([145, 142, 38, 13],
-                      name='counts',
-                      index=['Paul', 'John', 'George', 'Ringo'])
+    songs = pd.Series(
+        [145, 142, 38, 13], name="counts", index=["Paul", "John", "George", "Ringo"]
+    )
     print(songs)
 
 
@@ -45,23 +46,26 @@ def drop_rows_with_nan_values(df: pd.DataFrame) -> None:
     """
     # preparing (make some columns contain nan values)
     df_with_nan = df.copy(deep=True)
-    df_with_nan[df_with_nan[['all cores', 'one core',
-                             'total score']] < 1000] = pd.np.nan
+    df_with_nan[
+        df_with_nan[["all cores", "one core", "total score"]] < 1000
+    ] = pd.np.nan
 
     # Remove_rows_with_missing_values
     # P.S. axis=0 means to delete rows (not columns)
     # P.S2. subset lets you specify which columns to check for nan
     # (instead of all columns)
-    columns_to_check = ['all cores', 'one core', 'total score']
+    columns_to_check = ["all cores", "one core", "total score"]
     na_free = df_with_nan.dropna(axis=0, subset=columns_to_check)
 
     # optionally:
     # save rows which were dropped to show them
     only_na = df_with_nan[~df_with_nan.index.isin(na_free.index)]
 
-    print(f'{only_na.shape[0]} rows were dropped because they contain empty '
-          f'values in columns: {", ".join(columns_to_check)}. '
-          f'There these rows are:\n')
+    print(
+        f"{only_na.shape[0]} rows were dropped because they contain empty "
+        f'values in columns: {", ".join(columns_to_check)}. '
+        f"There these rows are:\n"
+    )
 
     print(only_na)
 
@@ -76,16 +80,18 @@ def groupby_unique() -> None:
     question number: 3e713c33-9c49-488c-a1cf-b104a5fd1af2
     """
 
-    df = pd.DataFrame({'Name': ['Corey', 'Harrison', 'Michael', 'David'],
-                       'City': ['Vancouver',
-                                'Miami',
-                                'Portland',
-                                'Miami']})
+    df = pd.DataFrame(
+        {
+            "Name": ["Corey", "Harrison", "Michael", "David"],
+            "City": ["Vancouver", "Miami", "Portland", "Miami"],
+        }
+    )
 
-    print(df.groupby('City')['Name'].nunique().max() > 1)
+    print(df.groupby("City")["Name"].nunique().max() > 1)
 
     # output:
     # True
+
 
 def groupby_unique_filter() -> None:
     """
@@ -97,14 +103,15 @@ def groupby_unique_filter() -> None:
     question number: 587ad19f-711c-40db-bc49-e2198328bd17
     """
 
-    df = pd.DataFrame({'Name': ['Corey', 'Harrison', 'Michael', 'David'],
-                       'City': ['Vancouver',
-                                'Miami',
-                                'Portland',
-                                'Miami']})
+    df = pd.DataFrame(
+        {
+            "Name": ["Corey", "Harrison", "Michael", "David"],
+            "City": ["Vancouver", "Miami", "Portland", "Miami"],
+        }
+    )
 
     print(df)
-    print(df.groupby('City')['Name'].filter(lambda x: x.nunique() > 1))
+    print(df.groupby("City")["Name"].filter(lambda x: x.nunique() > 1))
 
     """
     output

@@ -4,8 +4,13 @@
 from functools import wraps
 from time import perf_counter, sleep
 
+
 class TooManyCalls(Exception):
-    def __init__(self, timeout: float, message: str = "You've already made too many calls. Chill for at least {:.2} seconds"):
+    def __init__(
+        self,
+        timeout: float,
+        message: str = "You've already made too many calls. Chill for at least {:.2} seconds",
+    ):
         self.timeout = timeout
         self.message = message
         super().__init__(self.message)
@@ -23,6 +28,7 @@ def throttle(timeout, attempts):
         counter = 0
         last_called = 0.0
         wraps(func)
+
         def inner_wrapper(*args, **kwargs):
             nonlocal counter
             nonlocal last_called
@@ -36,17 +42,18 @@ def throttle(timeout, attempts):
                 return func(*args, **kwargs)
 
             if counter > attempts:
-                raise TooManyCalls(timeout=timeout-time_diff)
+                raise TooManyCalls(timeout=timeout - time_diff)
 
             return func(*args, **kwargs)
 
         return inner_wrapper
+
     return outer_wrapper
 
 
 @throttle(timeout=1, attempts=2)
 def say_whee():
-    print('wheee')
+    print("wheee")
 
 
 say_whee()

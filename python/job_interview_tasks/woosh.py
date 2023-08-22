@@ -8,22 +8,21 @@
 """
 
 
-
 import os
 import random
 from time import perf_counter
 
 
-NUMBERS_FILE_PATH = os.getenv('NUMBERS_FILE_PATH', "numbers_file.txt")
-SHUFFLED_FILE_PATH = os.getenv('SHUFFLED_FILE_PATH', "numbers_file.txt")
+NUMBERS_FILE_PATH = os.getenv("NUMBERS_FILE_PATH", "numbers_file.txt")
+SHUFFLED_FILE_PATH = os.getenv("SHUFFLED_FILE_PATH", "numbers_file.txt")
 
 ONE_MILLION = 1000000
 
-START_NUMBER = int(os.getenv('START_NUMBER', 79000000000))
-STOP_NUMBER = int(os.getenv('STOP_NUMBER', 80000000000))
+START_NUMBER = int(os.getenv("START_NUMBER", 79000000000))
+STOP_NUMBER = int(os.getenv("STOP_NUMBER", 80000000000))
 
-PRINT_EVERY = int(os.getenv('PRINT_EVERY', ONE_MILLION))
-READ_LINES_LIMIT = int(os.getenv('PRINT_EVERY', 250 * ONE_MILLION))
+PRINT_EVERY = int(os.getenv("PRINT_EVERY", ONE_MILLION))
+READ_LINES_LIMIT = int(os.getenv("PRINT_EVERY", 250 * ONE_MILLION))
 
 
 def create_phone_numbers_file(filepath: str) -> None:
@@ -46,10 +45,11 @@ def create_phone_numbers_file(filepath: str) -> None:
 
 def get_line_length(filepath: str) -> int:
     """Count lines in a given file."""
-    with open(filepath, 'r') as infile:
+    with open(filepath, "r") as infile:
         lines_number = sum(1 for _ in infile)
 
     return lines_number
+
 
 # def read_in_chunks(file_object, chunk_size=1024):
 #     while True:
@@ -59,11 +59,10 @@ def get_line_length(filepath: str) -> int:
 #         yield data
 
 
-
 def shuffle_file_in_chunks(
-        ordered_file_path: str,
-        shuffled_file_path: str,
-        read_lines_limit: int = 1,
+    ordered_file_path: str,
+    shuffled_file_path: str,
+    read_lines_limit: int = 1,
 ) -> None:
 
     with open(ordered_file_path, "r") as ordered_file:
@@ -85,7 +84,7 @@ def shuffle_file_in_chunks(
                     break
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     now = perf_counter()
     if not os.path.exists(NUMBERS_FILE_PATH):
         create_phone_numbers_file(NUMBERS_FILE_PATH)

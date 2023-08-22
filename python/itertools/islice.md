@@ -47,11 +47,26 @@ For example, you are going through millions of elements and want to do something
 You can you for loop and module operator to divide elements to chunks, but if the last chunk is not full, elements
 will be lost. How to split list or tuple to chunks properly?
 
+Provide two ways
+
 answer:
 ```python
-lst = list(range(61))
-n = 3
-print(list((lst[i:i + n] for i in range(0, len(lst), n))))
+foo = list(range(100))
+
+chunk_size = 10
+
+# manual
+for i in range(1, len(foo), chunk_size):
+    print(foo[i:i+chunk_size])  # you chunk of data
+# the downside - you create a new list size of chunk_size every time
+
+# with more_itertools.ichucked
+from more_itertools import ichunked
+
+for chunk in ichunked(foo, chunk_size):
+    print(type(chunk))
+
+# it will return iterables instead of lists, so you will spare some memore avoiding list creating
 ```
 
-question id: 
+question id: 59b76b7e-1839-4d86-b00d-2b14b49b8c92

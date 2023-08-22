@@ -11,7 +11,7 @@ question id: 9ae190ca-8538-43e8-aa2a-02e42ccd5a9b
 
 0. Kernel-level threads are controlled by the host OS, so the OS decides when to switch between them.
    Green threads are controlled by your app, so your app manages switching between this threads.
-1. Kernel-level threads use premtive-multitasking model. OS can switch threads whenever it (OS) decides
+1. Kernel-level threads use preemptive-multitasking model. OS can switch threads whenever it (OS) decides
  that that is necessary. OS do not let 
 CPU-heavy long-processes run for very long time. It can suspend the process and give the control
 to another process. If you want your I/O-tasks do not wait forever for CPU-bound tasks, this is

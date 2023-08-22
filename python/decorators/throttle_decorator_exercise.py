@@ -2,7 +2,11 @@ from time import sleep
 
 
 class TooManyCalls(Exception):
-    def __init__(self, timeout: float, message: str = "You've already made too many calls. Chill for at least {:.2} seconds"):
+    def __init__(
+        self,
+        timeout: float,
+        message: str = "You've already made too many calls. Chill for at least {:.2} seconds",
+    ):
         self.timeout = timeout
         self.message = message
         super().__init__(self.message)
@@ -13,13 +17,12 @@ class TooManyCalls(Exception):
 
 @throttle(timeout=1, attempts=2)
 def say_whee():
-    print('wheeee')
-
+    print("wheeee")
 
 
 say_whee()
 say_whee()
-sleep(.5)
+sleep(0.5)
 say_whee()
 sleep(2)
 say_whee()

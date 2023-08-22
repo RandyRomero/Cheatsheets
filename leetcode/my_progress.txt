@@ -1,3 +1,9 @@
+https://www.techinterviewhandbook.org/coding-interview-study-plan/
+
+All (20/109)
+
+Array (19/22)
+
 + Longest Substring Without Repeating Characters
 + Minimum Size Subarray Sum
 + Minimum Window Substring
@@ -9,16 +15,143 @@
 + Merge Sorted Array
 + Daily Temperatures
 + Number of Visible People in a Queue
++ Merge Intervals
++ Non-overlapping Intervals
++ Product of Array Except Self
++ First Missing Positive
++ Contains Duplicate
++ Maximum Subarray
++ Maximum Product Subarray
++ Search in Rotated Sorted Array
 
-- Valid Parentheses https://leetcode.com/problems/valid-parentheses/
-- Merge Intervals
-- Non-overlapping Intervals
-- Product of Array Except Self
-- First Missing Positive
-- Contains Duplicate
-- Maximum Subarray
-- Maximum Product Subarray
-- Search in Rotated Sorted Array
 - 3Sum
 - Container With Most Water
-- Sliding Window Maximumz
+- Sliding Window Maximum
+
+
+
+Hash Table (0/5)
+- Ransom Note
+- Group Anagrams
+- Insert Delete GetRandom O(1)
+- LRU Cache
+- All O one Data Structure
+
+
+Recursion (0/8)
+- Generate Parentheses
+- Combinations
+- Subsets
+- Letter Combinations of a Phone Number
+- Subsets II
+- Permutations
+- Sudoku Solver
+- Strobogrammatic Number II (LeetCode Premium)
+
+
+Sorting and searching (0/6)
+- Binary Search
+- Kth Smallest Element in a Sorted Matrix
+- Search a 2D Matrix
+- Kth Largest Element in an Array
+- Find Minimum in Rotated Sorted Array
+- Median of Two Sorted Arrays
+
+Linked List (0/6)
+- Reverse a Linked List
+- Detect Cycle in a Linked List
+- Merge Two Sorted Lists
+- Merge K Sorted Lists
+- Remove Nth Node From End Of List
+- Reorder List
+
+Queue (0/4)
+- Implement Stack using Queues
+- Implement Queue using Stacks
+- Design Circular Queue
+- Design Hit Counter (LeetCode Premium)
+
+
+Stack (1/8)
++ Valid Parentheses
+
+- Min Stack
+- Asteroid Collision
+- Evaluate Reverse Polish Notation
+- Basic Calculator
+- Basic Calculator II
+- Trapping Rain Water
+- Largest Rectangle in Histogram
+
+
+Tree (0/13)
+- Maximum Depth of Binary Tree
+- Invert/Flip Binary Tree
+- Lowest Common Ancestor of a Binary Search Tree
+- Same Tree
+- Binary Tree Maximum Path Sum
+- Binary Tree Level Order Traversal
+- Lowest Common Ancestor of a Binary Tree
+- Binary Tree Right Side View
+- Subtree of Another Tree
+- Construct Binary Tree from Preorder and Inorder Traversal
+- Serialize and Deserialize Binary Tree
+- Validate Binary Search Tree
+- Kth Smallest Element in a BST
+
+
+Graph (0/9)
+- Rotting Oranges
+- Minimum Knight Moves (LeetCode Premium)
+- Clone Graph
+- Pacific Atlantic Water Flow
+- Number of Connected Components in an Undirected Graph (LeetCode Premium)
+- Graph Valid Tree (LeetCode Premium)
+- Course Schedule
+- Course Schedule II
+- Alien Dictionary (LeetCode Premium)
+
+Heap (0/3)
+- K Closest Points to Origin
+- Top K Frequent Elements
+- Find Median from Data Stream
+
+
+Trie (0/4)
+- Implement Trie (Prefix Tree)
+- Add and Search Word
+- Word Break
+- Word Search II
+
+String (0/6)
+- Valid Anagram
+- Valid Palindrome
+- Longest Repeating Character Replacement
+- Find All Anagrams in a String
+- Longest Palindromic Substring
+- Encode and Decode Strings (LeetCode Premium)
+
+Interval (0/2)
+- Meeting Rooms (LeetCode Premium)
+- Meeting Rooms II (LeetCode Premium)
+
+
+Dynamic programming (0/4)
+- Climbing Stairs
+- Coin Change
+- House Robber
+- Longest Increasing Subsequence
+
+Matrix (0/4)
+- Set Matrix Zeroes
+- Spiral Matrix
+- Rotate Image
+- Valid Sudoku
+
+Binary (0/6)
+- Sum of Two Integers
+- Number of 1 Bits
+- Counting Bits
+- Missing Number
+- Reverse Bits
+- Single Number

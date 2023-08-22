@@ -59,3 +59,58 @@ a yield from expression.
 https://www.sobyte.net/post/2022-01/python-asyncio/
 
 question id: 7ac2a373-fc7d-48ed-9ab4-b51c36d9175d
+
+
+### How to make a generator return None before it is exhausted?
+
+```python
+def a_generator(strings: list[str]) -> str:
+    for string in strings:
+        for letter in string:
+            yield letter
+```
+
+How to return None before it raises StopIteration and why it could be needed?
+
+answer:
+You just need to explicitly yield None right after the loop
+
+```python
+def a_generator(strings: list[str]) -> str:
+    for string in strings:
+        for letter in string:
+            yield letter
+    yield None
+```
+
+It could be needed it you iterate through a zip() of two generators and they can
+be of different length. You won't even know it that one is shorter than the other.
+However, if None is an expected value, you can use another trick:
+
+```python
+from itertools import zip_longest
+
+for whatever in zip_longest(iteratble1, iterable2, fillvalue=""):
+    pass
+```
+
+question id: c1677e44-79c1-4420-9798-dd5e8d070332
+
+
+### What would be the output?
+
+```python
+def a_generator(strings: list[str]) -> str:
+    for string in strings:
+        for letter in string:
+            yield letter
+    yield None
+
+print(list(a_generator(["abc", "d"])))
+```
+
+answer:
+
+['a', 'b', 'c', 'd', None]
+
+question id: f433d501-ff2b-4a53-9e88-a2e590bff5b1

@@ -20,17 +20,18 @@ async def main():
 
 
 async def get_ticker_by_name(pool):
-    sql = f'''
+    sql = f"""
     INSERT INTO tickers(name) VALUES($1)
-    '''
+    """
     async with pool.acquire() as conn:
         try:
-            await conn.execute(sql, 'QRVO')
+            await conn.execute(sql, "QRVO")
         except (asyncpg.DataError, asyncpg.UniqueViolationError) as err:
             print("error")
             print(err)
         # tickers = [ticker.get("name") for ticker in resp]
         # print(tickers)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     asyncio.run(main())

@@ -100,17 +100,29 @@ question id: 019f1fdc-684e-416e-8d24-6e4fe14252fc
 ### What is Polimorphism?
 
 It's one of OOP principles.
-Poliphormism lest us use objects of different types in a completely same way
-if these objects implepent the same interface.
+Polymorphism is an ability of a function, or object to take on multiple forms, but still be used in the same manner.
 
-For example, there are different data types in Python that can be iterated over. 
+Polymorhism can be implemented in different ways. For example, method overloading, method overriding and duck typing.
+
+In method overloading the same class can have a few methods with the same name, that act differently depending on
+provided arguments.
+
+In method overriding we can define a method with the same name in subclass of a class, that will act differently.
+
+Finally, duck typing means that if an objects A has the same methods or attributes as an object B, 
+we can say that the object A is a form of B.
+
+
+Good example of using polymorphism is this:
+there are different data types in Python that can be iterated over. 
 It can be a List, or a FileBuffer. These are completely different data types.
 
 However, due to polimorphism, we can use `for loop` on both of these
 types without taking in account how the iteration mechanism works under the hood in these
 types.
 
-In other words, poliphormism lest us use objects of different types in a completely same way
-if these objects implepemt the same interface.
+
+
+https://hyperskill.org/learn/step/10027
 
 question id: 9d89d975-c1be-42ed-90ad-bc8efb242515

@@ -1,0 +1,20 @@
+
+Plan:
+- install 3.11
+- install sqlite 2.0 and check whether something has changed
+- docker course
+https://www.youtube.com/watch?v=nqZ7JWLJimk
+https://www.docker.com/blog/tag/python-env-series/
+try to containerize quantori fastqheat
+- chapter 3 of Designing Data Intensive Applications
+- some mongodb course
+- chapter 4 of Designing Data Intensive Applications
+- some fastapi course
+- maybe a small pet project, combining fastapi, mongodb and docker
+- chapter 5 of Designing Data Intensive Applications
+- graphql
+- chapter 6 of Designing Data Intensive Applications
+
+
+2023.02.27
+Finished Leetcode task - https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/

@@ -1,0 +1,12 @@
+Domain model is a business logic layer.
+
+The domain is a fancy way of saying the problem you’re trying to solve.
+
+A model is a map of a process.
+
+In a nutshell, DDD says that the most important thing about software is that it provides a useful model of a problem. If we get that model right, our software delivers value and makes new things possible.
+
+
+A value object is any object that is identified only by its data and doesn’t have a long-lived identity
+
+The Repository Pattern is an abstraction over persisten storage. 

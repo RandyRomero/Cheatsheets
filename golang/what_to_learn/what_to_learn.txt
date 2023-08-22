@@ -1,6 +1,5 @@
 python:
 - https://scoutapm.com/blog/python-garbage-collection
-- https://youtu.be/eirjjyP2qcQ Python Tutorial: Datetime Module - How to work with Dates, Times, Timedeltas, and Timezones
 - https://realpython.com/python-time-module/
 - https://habr.com/ru/post/432996/ python dictonaries
 - https://youtu.be/V2PkkMS2Ack Trey Hunner: Loop better: a deeper look at iteration in Python

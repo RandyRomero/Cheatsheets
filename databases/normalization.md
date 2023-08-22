@@ -1,3 +1,11 @@
+### What is normalization?
+
+Normalization is the process of efficiently organizing data in a database in accordance with a series of so-called normal 
+forms in order to reduce data redundancy and improve data integrity.
+
+question id: cd06a9f6-e2fc-4812-bd74-1456ad07d935
+
+
 ### How to achieve the 1st Normal Form?
 
 answer

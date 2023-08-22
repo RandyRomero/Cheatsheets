@@ -114,6 +114,7 @@ def lazy_merge_sort(first_list, second_list):
 
 # print(list(merge_sort2(first_list, second_list)))
 
+
 def two_way_merge(
     left_iterable: tp.Iterable[VALUE], right_iterable: tp.Iterable[VALUE]
 ) -> tp.Iterator[VALUE]:
@@ -158,9 +159,12 @@ def k_way_merge(*iterables):
         yield from iterables[0]
     else:
         mid = len(iterables) // 2
-        yield from two_way_merge(k_way_merge(*iterables[:mid]), k_way_merge(*iterables[mid:]))
+        yield from two_way_merge(
+            k_way_merge(*iterables[:mid]), k_way_merge(*iterables[mid:])
+        )
     # else:
     #     yield from lazy_merge_sort_no_matter_how_many_iterables(lazy_merge_sort(iterables[0], iterables[1]), *iterables[2:])
+
 
 print(list(k_way_merge(first_list, second_list, third_list, forth_list)))
 
@@ -205,10 +209,6 @@ print(list(k_way_merge(first_list, second_list, third_list, forth_list)))
 #         yield from lazy_merge_sort_no_matter_how_many_iterables((lazy_merge_sort(iterables[i], iterables[i + 1]) for i in range(0, len(iterables), 2)))
 
 
-
-
-
-
 def merge_sort2_original(first_list, second_list):
     first = iter(first_list)
     second = iter(second_list)
@@ -242,6 +242,7 @@ def merge_sort2_original(first_list, second_list):
             except StopIteration:
                 return resulting_list
 
+
 def merge_sort(first_list, second_list):
     first_pointer = 0
     second_pointer = 0
@@ -271,13 +272,13 @@ def merge_sort(first_list, second_list):
                     first_pointer += 1
             else:
                 resulting_list.append(first_list[first_pointer])
-                first_pointer +=1
+                first_pointer += 1
                 second_pointer += 1
                 print(f"{first_list[first_pointer]} == {second_list[second_pointer]}")
 
-
     except IndexError:
         return resulting_list
+
 
 def lazy_merge_sort_two_arrays(first_list, second_list):
     first = iter(first_list)
@@ -311,7 +312,3 @@ def lazy_merge_sort_two_arrays(first_list, second_list):
                 value2 = next(second)
             except StopIteration:
                 return resulting_list
-
-
-
-

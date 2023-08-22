@@ -4,10 +4,9 @@ from aio_pika import connect_robust, ExchangeType, Message
 
 from constants import EXCHANGE_NAME, ROUTING_KEY, RABBIT_CREDENTIALS
 
+
 async def main(loop):
-    connection = await connect_robust(
-        RABBIT_CREDENTIALS, loop=loop
-    )
+    connection = await connect_robust(RABBIT_CREDENTIALS, loop=loop)
 
     channel = await connection.channel()
 
@@ -22,7 +21,7 @@ async def main(loop):
     print("exit")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main(loop))
     loop.close()

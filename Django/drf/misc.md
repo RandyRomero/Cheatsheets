@@ -192,7 +192,7 @@ It adds to Django such things as:
 question id: 08db85c5-f7a7-4bce-9140-92d58fd5b933
 
 
-### How to set checks like allow_blank=True on a field in ModelSerializer?
+### How to set checks like allow_null=True on a field in ModelSerializer?
 
 ```python
 class SomeModelSerializer(serializers.ModelSerializer):
@@ -254,7 +254,7 @@ https://www.django-rest-framework.org/api-guide/serializers/#additional-keyword-
 question id: 52c8cd91-f351-4611-8c2b-1d858c76feb5
 
 
-### What are default value for a drf serializer for arguments 'required', 'allow_null', 'allow_blank', 'read_only'?
+### What are default values for a drf serializer for arguments 'required', 'allow_null', 'allow_blank', 'read_only'?
 
 answer
 
@@ -286,7 +286,7 @@ def save(self, **kwargs):
     try:
         super().save(**kwargs)
     except ModelError as e:
-        raise serializers.ValidationError(e)
+        raise ValidationError(e)
 ```
 
 https://stackoverflow.com/questions/54061030/django-return-serializer-validationerror-in-model-save-method

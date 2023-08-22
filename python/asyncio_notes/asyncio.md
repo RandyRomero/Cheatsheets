@@ -117,6 +117,17 @@ question id: 09ebbbfb-2186-46a2-b6f3-34cfecc7a31f
 
 ### How to run blocking synchronous function from asyncronous code?
 
+answer:
+
+Use 
+```python
+result = await loop.run_in_executor(None, functools.partial(your_func, args, kwarg=kwargs))
+```
+question id: 6c7e3d90-9f34-428e-9cd8-2e4730f8b774
+
+
+### How to run blocking synchronous function from asyncronous code?
+
 Use loop.run_in_executor() to fire up your blocking call in a new thread
 
 Example
@@ -177,3 +188,31 @@ asyncio.run(your_function(your_args)))
 ```
 
 question id: 22866d5b-4014-4b21-b287-c3f4d9f5fe9d
+
+
+### When does a Task give up the control?
+How to force an async func to yield control back to the loop and why you might need it?
+- when it is finished
+- when it waits for a timer or callback to trigger
+
+It won't pause, won't give up the control on await if it doesn't
+have anything to wait on.
+
+question id: 42ccfa6b-94fe-4b1d-a292-bf58b74f6aa1
+
+
+### How to force an async func to yield control back to the loop and why you might need it?
+
+answer:
+First of all, why you might need it. We all know that in an asynchronous function, as soon as
+interpreter hits `await ...` directive, the function (coroutine) yields the control back
+to the event loop. It's not exactly like this.
+The truth is, that if there is nothing to wait on (no waiting on http or i/o request to be finished),
+the same coroutine will continue working and won't let the control back to the event loop. It will
+be executing until it's finished.
+
+In order to force the asynchronous function yield control back to the event loop, you can put
+`await asyncio.sleep(0)` in place where you want your coroutine pause and give up the control.
+It seems like a crutch, but at least is was Guido who suggested doing it (I found it in an issue somewhere on github).
+
+question id: 3fb4dc13-b92e-40b9-a76a-716f802d5ea3

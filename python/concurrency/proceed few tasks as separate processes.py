@@ -13,9 +13,9 @@ import pandas as pd
 
 
 def open_file(file):  # the func called in child processes
-    print(f'Opening {file}...')
+    print(f"Opening {file}...")
     df = pd.read_excel(file)
-    print(f'Done with {file}...')
+    print(f"Done with {file}...")
     return df
 
 
@@ -28,15 +28,14 @@ def multi_add(files):
 
 
 def main():
-    print('Program started...')
-    files = [f'{i}.xlsx' for i in range(1, 9)]
+    print("Program started...")
+    files = [f"{i}.xlsx" for i in range(1, 9)]
 
     start = perf_counter()
     multi_add(files)
     finish = perf_counter()
-    print(f'Opened {len(files)} in {round(finish - start, 2)} seconds')
+    print(f"Opened {len(files)} in {round(finish - start, 2)} seconds")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-

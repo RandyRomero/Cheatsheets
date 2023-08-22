@@ -234,7 +234,7 @@ print(valid_choices)
 question id: b897f0a8-139a-49f0-9d46-2d4c633667f2
 
 
-### How to validates several fields with Pydantic validator?
+### How to validate several fields with Pydantic validator?
 
 Suppose you have a model like this:
 
@@ -263,3 +263,107 @@ class Person(BaseModel):
 ```
 
 question id: 0a9ba6d9-16b0-42ce-baa4-7bc50a8c8be6
+
+
+### How to assign an alias of the same pattern for all fields at once?
+
+For example, you have a payload like this:
+```python
+payload = {"Blue": 10, "Red": 11, "Green": 7}
+```
+and a model like this:
+
+```python
+class Colours(BaseModel):
+    blue: int
+    red: int
+    green: int
+```
+
+How to assign alias to every field of this model without doing it one by one?
+
+answer:
+
+```python
+payload = {"Blue": 10, "Red": 11, "Green": 7}
+
+def to_camel(string: str) -> str:
+    return "".join(word.capitalize() for word in string.split("_"))
+
+
+class ToCamelCaseModel(BaseModel):
+
+    class Config:
+        alias_generator = to_camel
+
+
+class Colours(ToCamelCaseModel):
+    blue: int
+    red: int
+    green: int
+
+
+print(Colours(**payload))  # blue=10 red=11 green=7
+```
+
+question id: dfee4f8d-64d0-4bab-b3fe-9ce718e2bb52
+
+
+### How to represent a pydantic model as dict by aliases?
+
+For example, you want to make a pydantic model
+that you can initialize and gave values and convert
+to a dict such as {"Foo": "foo"}
+How would you do it?
+
+an example of usage:
+```python
+some_model = SomeModel(foo="foo")
+some_model.dict() # {"Foo": "foo"}
+```
+
+How would you code such a model?
+
+
+answer
+
+```python
+from pydantic import BaseModel, Field
+
+class SomeModel(BaseModel):
+    foo: str = Field(alias="Foo")
+
+    class Config:
+        allow_population_by_field_name = True
+
+
+some_model = SomeModel(foo="foo")
+print(some_model.dict(by_alias=True))  # {'Foo': 'foo'}
+```
+
+Notes:
+
+without `allow_population_by_field_name` it will be impossible to assign
+a value by a field name, for example
+```python
+from pydantic import BaseModel, Field
+
+class SomeModel(BaseModel):
+    foo: str = Field(alias="Foo")
+
+
+some_model = SomeModel(foo="foo")
+
+Traceback (most recent call last):
+  File "/home/aleksandr/yad/Studies/Cheatsheets/python/misc.py", line 7, in <module>
+    some_model = SomeModel(foo="foo")
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for SomeModel
+Foo
+  field required (type=value_error.missing)
+```
+
+and without passing by_alias to .dict() it will be just {"foo": "foo"}
+
+question id: 1cdaddf4-2265-4c04-8ef0-58c3785ce7a7
+

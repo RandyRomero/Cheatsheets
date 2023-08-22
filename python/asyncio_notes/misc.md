@@ -375,79 +375,58 @@ https://youtu.be/1lJDZx6f6tY?t=1002
 question id: e149ffa1-7e82-4788-b033-f460b1a89e2d
 
 
-### How to gracefully shutdown async Tasks before closing the event loop?
+### How to wait until all background tasks are finished?
 
-Or how to handle "Task was destroyed but it is pending!"
-
-answer
-
-In layman's terms:
-- catch Exceptions that causes your event loop to stop
-- get all current tasks that is still working
-- async.gather() them to wait while they finish
-- stop loop manually
+Background tasks that were created with `loop.create_task()`.
 
 ```python
-async def main():
-  # whatever
+import asyncio
 
-async def shutdown():
-    tasks = asyncio.all_tasks()  # get unfinished tasks
-    await asyncio.gather(*tasks)  # wait when until they are finished
+
+async def wait_for_me(sec):
+    await asyncio.sleep(sec)
+    print(f"done waiting for {sec} seconds")
+
+async def main():
+    print("starting...")
+    loop = asyncio.get_running_loop()
+    loop.create_task(wait_for_me(3))
+    loop.create_task(wait_for_me(2))
+
+    # function will exit before any of subtasks are finished
+    # Put your code here to prevent it
+    
 
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    try:
-        loop.run_until_complete(main())
-    except KeyboardInterrupt:  # or whatever you want to catch
-        pass
-    finally:
-        await shutdown()
-    loop.close()
+    asyncio.run(main())
 ```
-
-https://youtu.be/1lJDZx6f6tY?t=1199
-https://stackoverflow.com/questions/37417595/graceful-shutdown-of-asyncio-coroutines
-
-question id: 9bcd39d0-3e18-4116-836f-9d19b18e4fd5
-
-
-
-### How to gracefully cancel all the Tasks before closing the event loop?
 
 answer:
 
-In layman's terms:
-- catch Exceptions that causes your event loop to stop
-- get all current tasks that is still working
-- cancel them
-- async.gather() them to wait until they are cancelled
-- stop loop manually
-
 ```python
-async def main():
-  # whatever
+import asyncio
 
-async def shutdown():
-    tasks = asyncio.all_tasks()  # get unfinished tasks
-    [task.cancel for task in tasks] # cancel them
-    await asyncio.gather(*tasks)  # wait until they are cancelled
+
+async def wait_for_me(sec):
+    await asyncio.sleep(sec)
+    print(f"done waiting for {sec} seconds")
+
+async def main():
+    print("starting...")
+    loop = asyncio.get_running_loop()
+    loop.create_task(wait_for_me(3))
+    loop.create_task(wait_for_me(2))
+
+    tasks = asyncio.all_tasks()
+    tasks.remove(asyncio.current_task())
+    await asyncio.gather(*tasks)
+    
 
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    try:
-        loop.run_until_complete(main())
-    except KeyboardInterrupt:  # or whatever you want to catch
-        pass
-    finally:
-        await shutdown()
-    loop.close()
+    asyncio.run(main())
 ```
 
-https://youtu.be/1lJDZx6f6tY?t=1199
-https://stackoverflow.com/questions/37417595/graceful-shutdown-of-asyncio-coroutines
-
-question id: 9438fb44-93f5-41dc-9165-a27faaadc013
+question id: 1321e96d-e954-42c5-8a3f-85c11323300c
 
 
 

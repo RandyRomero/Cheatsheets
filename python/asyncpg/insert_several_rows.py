@@ -16,15 +16,15 @@ async def get_connection():
 
 async def main():
     conn = await get_connection()
-    tickers = ['SBUX', 'AAPL', 'TSM', 'MSFT', 'INTL', 'FAST', 'MNST']
+    tickers = ["SBUX", "AAPL", "TSM", "MSFT", "INTL", "FAST", "MNST"]
     await insert_tickers(conn, tickers)
 
 
 async def insert_tickers(conn, tickers):
-    sql = '''
+    sql = """
     INSERT INTO tickers(name)
     VALUES ($1)
-    '''
+    """
 
     tickers_prepared = [(ticker,) for ticker in tickers]
     try:
@@ -37,5 +37,5 @@ async def insert_tickers(conn, tickers):
         conn.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(main())

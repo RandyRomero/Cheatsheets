@@ -3,6 +3,19 @@
 
 question id: 46f48733-d907-4172-a07b-36c03853c1c5
 
+
+### How to extract a "CREATE TABLE" SQL statemnt of existing table in Postgres?
+
+answer
+
+`pg_dump db_name -t table_name --schema-only`
+
+If postgres in a docker container:
+`docker exec -it container_name pg_dump db_name -t table_name --schema-only -U postgres`
+
+question id: 4b0192f9-4822-489e-add4-c74497eadfbc
+
+
 ### Create a database:
 `CREATE DATABASE database_name;`
 
@@ -2855,6 +2868,15 @@ https://www.postgresqltutorial.com/postgresql-materialized-views/
 question id: 774ef474-a410-4de7-a050-8f490dd3fdf8
 
 
+### What is the name of a Postgres View that  caches the result of a complex expensive query and then allow you to refresh this result periodically?
+
+Materialized View
+
+https://www.postgresqltutorial.com/postgresql-materialized-views/
+
+question id: 9b93499a-deee-4806-b38c-6ed3efa983d7
+
+
 ### What happens when you DELETE some rows from a table in PostgreSQL?
 
 They don't get deleted. These rows are marked to be available to reuse. Every row
@@ -3379,6 +3401,17 @@ WHERE film_id IN (SELECT fa.film_id
 
 ```
 
+or
+
+```sql
+SELECT film.* FROM film
+JOIN film_actor ON film.film_id = film_actor.film_id
+JOIN actor ON actor.actor_id = film_actor.actor_id
+WHERE (first_name = 'Ed' AND last_name = 'Chase') OR (first_name = 'Spencer' AND last_name = 'Depp')
+GROUP BY film.film_id
+HAVING COUNT(film_actor.film_id) > 1;
+```
+
 question id: f589b478-3b80-4126-8575-f42951aebe0c
 
 
@@ -3609,4 +3642,17 @@ CREATE TABLE AS SELECT FROM will copy a table and data for you to your 'deleted'
 NB: I almost sure constraints and stuff like that won't get into copied table (but we don't need them for soft-delete).
 
 question id: 03ada958-829c-4e40-be0d-233e1c0468b8
+
+
+### What is you need to create a new database and user on postgres initialization?
+
+For example, if your postgres setup is inside docker-compose and you want to have 
+database and user to be set up already every time you spin up a new container.
+
+answer:
+
+You just need to define enviroment variables such as:
+PGUSER, POSTGRES_PASSWORD and POSTGRES_DB
+
+question id: 6010ae25-f469-4e97-bd2c-622717e5073f
 

@@ -21,7 +21,9 @@ where `[int, int]` are parameters passed to the function, and `int` is type of w
 question id: 1b40cbfa-30ff-4341-a3bc-6b480d7dc242
 
 
-### How to annotate async function? 
+### How to annotate async function?
+
+Which, for example, accepts two integers and returns one integer.
 
 ```python
 import typing as tp

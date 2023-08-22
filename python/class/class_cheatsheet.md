@@ -137,3 +137,59 @@ A.a  # baz
 https://python-course.eu/oop/class-instance-attributes.php
 
 question id: f6facce1-d384-4e07-ab26-ef1e4f7e01a9
+
+
+### How to figure out in what order Python will search for a method or attribute of a class that inherits from other class or classes?
+And what is the name of the algorithm for that?
+
+
+Let's start with a simple example:
+```python
+class A:
+  def method(self):
+    print("A.method() is called")
+
+class B(A):
+  def method(self):
+    print("B.method() is called")
+
+b = B()
+b.method()
+```
+
+The output will be "B.method() is called".
+So the method/attribute is first searched in the class which was
+mentioned (b.method() - b), than, if not found, in a parent class.
+
+
+In cases less obvious than this you can just call dunder mro attribute
+on the class (not object) to get the tuple with order of classes in which
+a search of attributes/methods will be performed.
+
+Like:
+```python
+class A:
+  def method(self):
+    print("A.method() called")
+
+class B:
+  def method(self):
+    print("B.method() called")
+
+class C(A, B):
+  pass
+
+class D(C, B):
+  pass
+
+# d = D()
+# d.method() which method will be called?
+
+print(D.__mro__)
+# (<class '__main__.D'>, <class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
+```
+
+The algorithm which Python uses for definining in which order methods should be
+inherited is called C3 Linearization.
+
+question id: 0fcc8d77-16cc-4355-838e-89253ffe5666
