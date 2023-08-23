@@ -116,3 +116,12 @@ def process_s3_objects_in_threads(
 ```
 
 question id: 5770128d-74f3-48d7-a1d1-484158b6eda8
+
+
+### How to gracefully shutdown threads?
+
+answer:
+I guess there can be multiple answers, but I would say that it makes sence to pass a threading.Event
+to a thread on start, and write your func so to check on this event and when it set - to finish working and exit.
+
+question id: ccce5921-39fa-4693-a6dc-06da3eea5ca1

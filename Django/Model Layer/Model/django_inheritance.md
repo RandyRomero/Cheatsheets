@@ -1,8 +1,8 @@
 ### How many there are styles of inheritance in Django and what are they?
 
-- Abstract base classes
-- Multi-table (or concrete) inheritance
-- Single Table Inheritance(e.g. though Proxy models)
+- Abstract base classes (you just don't want to redefine the same fields in Python class, so you inherit one to avoid it)
+- Multi-table (or concrete) inheritance (each subclass has its own table)
+- Proxy models - you want a separate model for the same table, but with changed ordering or something
 
 https://docs.djangoproject.com/en/3.1/topics/db/models/#model-inheritance
 

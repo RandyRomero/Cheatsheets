@@ -293,9 +293,7 @@ With a dict and for loop:
 counter = {}
 
 for character in 'mississippi':
-    if character not in counter:
-        counter[character] = 0
-    counter[character] += 1
+    counter[character] = counter.get(character, 0) + 1
 
 print(counter)  # {'m': 1, 'i': 4, 's': 4, 'p': 2}
 ```
