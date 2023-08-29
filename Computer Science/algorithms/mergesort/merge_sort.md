@@ -25,7 +25,43 @@ question id: beece6fd-5f99-4266-8ff7-db322d2e97ec
 ```python
 some_unsorted_list = [3, 0, 8, 5, 1, 17, 39]
 
+def two_way_merge(left: tp.Iterable[int], right: tp.Iterable[int]) -> tp.Iterable[int]:
+    left_iter = iter(left)
+    right_iter = iter(right)
+
+    try:
+        next_left = next(left_iter)
+    except StopIteration:
+        yield from right_iter
+        return
+
+    try:
+        next_right = next(right_iter)
+    except StopIteration:
+        yield from left_iter
+        return
+
+    while True:
+        if next_left < next_right:
+            yield next_left
+            try:
+                next_left = next(left_iter)
+            except StopIteration:
+                yield next_right
+                yield from right_iter
+                return
+
+        else:
+            yield next_right
+            try:
+                next_right = next(right_iter)
+            except StopIteration:
+                yield next_left
+                yield from left_iter
+                return
+
 def merge_sort():
+	# write your code here using the function above
     pass
 
 print(merge_sort(some_unsorted_list))  # [0, 1, 3, 5, 8, 17, 39]
@@ -79,7 +115,7 @@ def merge_sort(sequence: tp.Sequence[VALUE]) -> tp.Sequence[VALUE]:
         return
 
     mid = len_sequence // 2
-    yield from two_way_merge(mergesort(sequence[:mid]), sequence[mid:])
+    yield from two_way_merge(merge_sort(sequence[:mid]), merge_sort(sequence[mid:]))
 ```
 
 question id: 7d263973-23e3-4c99-a49b-fa729ee8480c

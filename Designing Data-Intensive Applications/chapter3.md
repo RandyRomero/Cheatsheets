@@ -7,3 +7,6 @@ index everything by default, but require you—the application developer or data
 administrator—to choose indexes manually, using your knowledge of the applica‐
 tion’s typical query patterns. You can then choose the indexes that give your applica‐
 tion the greatest benefit, without introducing more overhead than necessary
+
+
+SSTable - Sorted String table
