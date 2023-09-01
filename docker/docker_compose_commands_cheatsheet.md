@@ -1,4 +1,4 @@
-### What does `docker-compose build` does?
+### What does `docker-compose build` do?
 
 answer:
 It builds and/or pulls all images specified in your docker-compose.yml file, so they are ready to run

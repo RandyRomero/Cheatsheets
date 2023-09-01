@@ -92,7 +92,7 @@ services:
         volumes:
             - vol_name:/data/db
 volumes:
-    vidly:
+    vol_name:
 ```
 
 Note that in order to use a volume we need to declare it. The key is a volume name, the value is empty

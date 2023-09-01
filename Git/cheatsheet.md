@@ -156,3 +156,14 @@ answer
 git checkout -b new-branch-name <commit-sha>
 
 question id: 096eaf66-b71e-40d1-93cd-734f47fdee56
+
+
+### How to stop tracking a folder or file without deleting it from local machine (3 steps)?
+
+answer:
+
+1. put your folder/file to gitignore
+2. git rm -r --cached your_folder / git rm --cached your_file
+3. push to repo
+
+question id: 4389057c-1051-473b-9a6a-e0bac22d9cc1
